@@ -1,0 +1,11 @@
+.DS_Store
+bin/
+target/
+build.acceleo
+*.xtendbin
+*~
+.idea
+.classpath
+.project
+*.sh
+*.iml
