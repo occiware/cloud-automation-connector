@@ -19,3 +19,4 @@ Export-Package: org.json.simple.JSONObject,
   org.apache.http.client,
   org.apache.http,
   org.occiware.cloudautomation.connector
+
