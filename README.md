@@ -9,7 +9,7 @@ The purpose of the software is to support OCCI request in order to manage infras
 To build the software you need to have maven installed. Then run the following command :
 
 ```maven
-mvn package 
+mvn clean install
 ```
 
 The software was designed to run as a plugin inside [Mart-Server](https://github.com/occiware/MartServer).
