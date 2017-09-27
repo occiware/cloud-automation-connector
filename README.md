@@ -29,5 +29,20 @@ To use the plugins indside Mart Server follow the steps below :
 
 3. Then follow the [MartServer administration guide](https://github.com/occiware/MartServer/blob/master/doc/server.md) to run MartServer.
 
+## License
 
+Copyright (c) 2015-2017 Obeo, Inria, Activeeon
 
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+ - William Piers <william.piers@obeo.fr>
+ - Philippe Merle <philippe.merle@inria.fr>
+ - Faiez Zalila <faiez.zalila@inria.fr>
+ - Christophe Gourdin <christophe.gourdin@inria.fr>
+ - Mael Audren de kerdrel <mael.audren@activeeon.com>
+
+       
