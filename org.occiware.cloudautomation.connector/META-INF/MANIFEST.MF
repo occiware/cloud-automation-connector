@@ -4,19 +4,15 @@ Bundle-Name: org.occiware.cloudautomation.connector
 Bundle-SymbolicName: org.occiware.cloudautomation.connector;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .,
-  lib/httpclient-4.5.2.jar,
-  lib/httpcore-4.4.5.jar,
-  lib/json-simple-1.1.1.jar
+ lib/rest-assured-3.0.3.jar,
+ lib/json-simple-1.1.1.jar
 Bundle-Vendor: OCCIware
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.core,
- org.eclipse.cmf.occi.infrastructure
-Export-Package: org.json.simple.JSONObject,
-  org.apache.http.impl.client,
-  org.apache.http.entity,
-  org.apache.http.client,
-  org.apache.http,
-  org.occiware.cloudautomation.connector
+ org.occiware.cloudautomation
+Export-Package: org.occiware.cloudautomation.connector,
+ io.restassured,
+ org.json.simple
 

@@ -17,7 +17,7 @@
    <!-- Register the factory of this connector. -->
    <extension point="org.eclipse.emf.ecore.factory_override">
       <factory
-            uri="http://schemas.ogf.org/occi/infrastructure/ecore"
+            uri="http://org.occiware.cloudautomation/ecore"
             class="org.occiware.cloudautomation.connector.ConnectorFactory"/>
    </extension>
 
