@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="org.occiware.cloudautomation.connector/src-gen"/>
+	<classpathentry kind="src" path="org.occiware.cloudautomation.edit/src-gen"/>
+	<classpathentry kind="src" path="org.occiware.cloudautomation/src-gen"/>
+	<classpathentry kind="lib" path="org.occiware.cloudautomation.connector/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="org.occiware.cloudautomation.connector/lib/rest-assured-3.0.3.jar"/>
+	<classpathentry kind="lib" path="org.occiware.cloudautomation.connector/target/org.occiware.cloudautomation.connector-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="org.occiware.cloudautomation.edit/target/org.occiware.cloudautomation.edit-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="org.occiware.cloudautomation/target/org.occiware.cloudautomation-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="org.occiware.cloudautomation/target/classes"/>
+</classpath>
