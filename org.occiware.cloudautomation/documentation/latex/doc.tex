@@ -1,0 +1,210 @@
+\section{OCCI cloudautomation extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & cloudautomation \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Specification} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & crtp \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Kinds}
+\subsubsection{\texttt{CloudAutomationNetwork} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & CloudAutomationNetwork \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & NetworkInterface (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{CloudAutomationInstance} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & CloudAutomationInstance \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Compute (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{CloudAutomationStorage} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & CloudAutomationStorage \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Storage (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{Provider} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Provider \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item CloudAutomationNetwork (http://org.occiware.cloudautomation\#)
+	\item CloudAutomationInstance (http://org.occiware.cloudautomation\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{Provider} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  cloudautomation.provider.username & String & true & true &  & the username to connect to the provider
+ \\
+  \hline
+  cloudautomation.provider.type & String & true & true &  & the type of infrastructure used \\
+  \hline
+  cloudautomation.provider.password & String & true & true &  & the password to connect to the provider \\
+  \hline
+  cloudautomation.provider.endpoint & String & true & true &  & the provider platform url \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{Credentials} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Credentials \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item CloudAutomationStorage (http://org.occiware.cloudautomation\#)
+	\item CloudAutomationInstance (http://org.occiware.cloudautomation\#)
+	\item CloudAutomationNetwork (http://org.occiware.cloudautomation\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{Credentials} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  cloudautomation.credentials.password & String & true & true &  & the user password on cloud automation \\
+  \hline
+  cloudautomation.credentials.username & String & true & true &  & the user username on cloudautomation \\
+  \hline
+  cloudautomation.credentials.endpoint & String & false & true & localhost:8080 & cloud automation url \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{InstanceTemplate} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & InstanceTemplate \\
+  \hline  
+  \textbf{Scheme} & http://org.occiware.cloudautomation\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item CloudAutomationInstance (http://org.occiware.cloudautomation\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{InstanceTemplate} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  cloudautomation.instancetemplate.imageName & String & true & false &  & the id of the image that will be deployed \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 

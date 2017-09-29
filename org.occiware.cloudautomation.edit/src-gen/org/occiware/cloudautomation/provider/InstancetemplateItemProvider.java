@@ -59,25 +59,25 @@ public class InstancetemplateItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addImageNamePropertyDescriptor(object);
+			addCloudautomationInstancetemplateImageNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Image Name feature.
+	 * This adds a property descriptor for the Cloudautomation Instancetemplate Image Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImageNamePropertyDescriptor(Object object) {
+	protected void addCloudautomationInstancetemplateImageNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Instancetemplate_imageName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instancetemplate_imageName_feature", "_UI_Instancetemplate_type"),
-				 CloudautomationPackage.Literals.INSTANCETEMPLATE__IMAGE_NAME,
+				 getString("_UI_Instancetemplate_cloudautomationInstancetemplateImageName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancetemplate_cloudautomationInstancetemplateImageName_feature", "_UI_Instancetemplate_type"),
+				 CloudautomationPackage.Literals.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME,
 				 true,
 				 false,
 				 false,
@@ -105,7 +105,7 @@ public class InstancetemplateItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Instancetemplate)object).getImageName();
+		String label = ((Instancetemplate)object).getCloudautomationInstancetemplateImageName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Instancetemplate_type") :
 			getString("_UI_Instancetemplate_type") + " " + label;
@@ -124,7 +124,7 @@ public class InstancetemplateItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Instancetemplate.class)) {
-			case CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME:
+			case CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -58,31 +58,31 @@ import org.occiware.cloudautomation.Instancetemplate;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.impl.InstancetemplateImpl#getImageName <em>Image Name</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.InstancetemplateImpl#getCloudautomationInstancetemplateImageName <em>Cloudautomation Instancetemplate Image Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InstancetemplateImpl extends MixinBaseImpl implements Instancetemplate {
 	/**
-	 * The default value of the '{@link #getImageName() <em>Image Name</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationInstancetemplateImageName() <em>Cloudautomation Instancetemplate Image Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImageName()
+	 * @see #getCloudautomationInstancetemplateImageName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String IMAGE_NAME_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getImageName() <em>Image Name</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationInstancetemplateImageName() <em>Cloudautomation Instancetemplate Image Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImageName()
+	 * @see #getCloudautomationInstancetemplateImageName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String imageName = IMAGE_NAME_EDEFAULT;
+	protected String cloudautomationInstancetemplateImageName = CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +108,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getImageName() {
-		return imageName;
+	public String getCloudautomationInstancetemplateImageName() {
+		return cloudautomationInstancetemplateImageName;
 	}
 
 	/**
@@ -117,11 +117,11 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImageName(String newImageName) {
-		String oldImageName = imageName;
-		imageName = newImageName;
+	public void setCloudautomationInstancetemplateImageName(String newCloudautomationInstancetemplateImageName) {
+		String oldCloudautomationInstancetemplateImageName = cloudautomationInstancetemplateImageName;
+		cloudautomationInstancetemplateImageName = newCloudautomationInstancetemplateImageName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME, oldImageName, imageName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME, oldCloudautomationInstancetemplateImageName, cloudautomationInstancetemplateImageName));
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME:
-				return getImageName();
+			case CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME:
+				return getCloudautomationInstancetemplateImageName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,8 +185,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME:
-				setImageName((String)newValue);
+			case CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME:
+				setCloudautomationInstancetemplateImageName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,8 +200,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME:
-				setImageName(IMAGE_NAME_EDEFAULT);
+			case CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME:
+				setCloudautomationInstancetemplateImageName(CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -215,8 +215,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.INSTANCETEMPLATE__IMAGE_NAME:
-				return IMAGE_NAME_EDEFAULT == null ? imageName != null : !IMAGE_NAME_EDEFAULT.equals(imageName);
+			case CloudautomationPackage.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME:
+				return CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME_EDEFAULT == null ? cloudautomationInstancetemplateImageName != null : !CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME_EDEFAULT.equals(cloudautomationInstancetemplateImageName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -246,8 +246,8 @@ public class InstancetemplateImpl extends MixinBaseImpl implements Instancetempl
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (imageName: ");
-		result.append(imageName);
+		result.append(" (cloudautomationInstancetemplateImageName: ");
+		result.append(cloudautomationInstancetemplateImageName);
 		result.append(')');
 		return result.toString();
 	}

@@ -59,27 +59,27 @@ public class CredentialsItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPasswordPropertyDescriptor(object);
-			addUsernamePropertyDescriptor(object);
-			addCloudautomationEndpointPropertyDescriptor(object);
+			addCloudautomationCredentialsPasswordPropertyDescriptor(object);
+			addCloudautomationCredentialsUsernamePropertyDescriptor(object);
+			addCloudautomationCredentialsEndpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Password feature.
+	 * This adds a property descriptor for the Cloudautomation Credentials Password feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPasswordPropertyDescriptor(Object object) {
+	protected void addCloudautomationCredentialsPasswordPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Credentials_password_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_password_feature", "_UI_Credentials_type"),
-				 CloudautomationPackage.Literals.CREDENTIALS__PASSWORD,
+				 getString("_UI_Credentials_cloudautomationCredentialsPassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_cloudautomationCredentialsPassword_feature", "_UI_Credentials_type"),
+				 CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -89,19 +89,19 @@ public class CredentialsItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Username feature.
+	 * This adds a property descriptor for the Cloudautomation Credentials Username feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsernamePropertyDescriptor(Object object) {
+	protected void addCloudautomationCredentialsUsernamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Credentials_username_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_username_feature", "_UI_Credentials_type"),
-				 CloudautomationPackage.Literals.CREDENTIALS__USERNAME,
+				 getString("_UI_Credentials_cloudautomationCredentialsUsername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_cloudautomationCredentialsUsername_feature", "_UI_Credentials_type"),
+				 CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME,
 				 true,
 				 false,
 				 false,
@@ -111,19 +111,19 @@ public class CredentialsItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Cloudautomation Endpoint feature.
+	 * This adds a property descriptor for the Cloudautomation Credentials Endpoint feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCloudautomationEndpointPropertyDescriptor(Object object) {
+	protected void addCloudautomationCredentialsEndpointPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Credentials_cloudautomationEndpoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_cloudautomationEndpoint_feature", "_UI_Credentials_type"),
-				 CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT,
+				 getString("_UI_Credentials_cloudautomationCredentialsEndpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Credentials_cloudautomationCredentialsEndpoint_feature", "_UI_Credentials_type"),
+				 CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT,
 				 true,
 				 false,
 				 false,
@@ -151,7 +151,7 @@ public class CredentialsItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Credentials)object).getUsername();
+		String label = ((Credentials)object).getCloudautomationCredentialsUsername();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Credentials_type") :
 			getString("_UI_Credentials_type") + " " + label;
@@ -170,9 +170,9 @@ public class CredentialsItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Credentials.class)) {
-			case CloudautomationPackage.CREDENTIALS__PASSWORD:
-			case CloudautomationPackage.CREDENTIALS__USERNAME:
-			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT:
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD:
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME:
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

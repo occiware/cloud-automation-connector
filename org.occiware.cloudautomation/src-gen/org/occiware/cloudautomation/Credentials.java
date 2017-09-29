@@ -27,9 +27,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.Credentials#getPassword <em>Password</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.Credentials#getUsername <em>Username</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.Credentials#getCloudautomationEndpoint <em>Cloudautomation Endpoint</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsPassword <em>Cloudautomation Credentials Password</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsUsername <em>Cloudautomation Credentials Username</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsEndpoint <em>Cloudautomation Credentials Endpoint</em>}</li>
  * </ul>
  *
  * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials()
@@ -38,83 +38,83 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface Credentials extends MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Password</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Credentials Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the user password on cloud automation
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Password</em>' attribute.
-	 * @see #setPassword(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_Password()
+	 * @return the value of the '<em>Cloudautomation Credentials Password</em>' attribute.
+	 * @see #setCloudautomationCredentialsPassword(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_CloudautomationCredentialsPassword()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!password'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!cloudautomationCredentialsPassword'"
 	 * @generated
 	 */
-	String getPassword();
+	String getCloudautomationCredentialsPassword();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getPassword <em>Password</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsPassword <em>Cloudautomation Credentials Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Password</em>' attribute.
-	 * @see #getPassword()
+	 * @param value the new value of the '<em>Cloudautomation Credentials Password</em>' attribute.
+	 * @see #getCloudautomationCredentialsPassword()
 	 * @generated
 	 */
-	void setPassword(String value);
+	void setCloudautomationCredentialsPassword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Username</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Credentials Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the user username on cloudautomation
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Username</em>' attribute.
-	 * @see #setUsername(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_Username()
+	 * @return the value of the '<em>Cloudautomation Credentials Username</em>' attribute.
+	 * @see #setCloudautomationCredentialsUsername(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_CloudautomationCredentialsUsername()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!username'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!cloudautomationCredentialsUsername'"
 	 * @generated
 	 */
-	String getUsername();
+	String getCloudautomationCredentialsUsername();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getUsername <em>Username</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsUsername <em>Cloudautomation Credentials Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Username</em>' attribute.
-	 * @see #getUsername()
+	 * @param value the new value of the '<em>Cloudautomation Credentials Username</em>' attribute.
+	 * @see #getCloudautomationCredentialsUsername()
 	 * @generated
 	 */
-	void setUsername(String value);
+	void setCloudautomationCredentialsUsername(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Cloudautomation Endpoint</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Credentials Endpoint</b></em>' attribute.
 	 * The default value is <code>"localhost:8080"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * cloud automation url
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Cloudautomation Endpoint</em>' attribute.
-	 * @see #setCloudautomationEndpoint(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_CloudautomationEndpoint()
+	 * @return the value of the '<em>Cloudautomation Credentials Endpoint</em>' attribute.
+	 * @see #setCloudautomationCredentialsEndpoint(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getCredentials_CloudautomationCredentialsEndpoint()
 	 * @model default="localhost:8080" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!cloudautomationEndpoint'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Credentials!cloudautomationCredentialsEndpoint'"
 	 * @generated
 	 */
-	String getCloudautomationEndpoint();
+	String getCloudautomationCredentialsEndpoint();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getCloudautomationEndpoint <em>Cloudautomation Endpoint</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsEndpoint <em>Cloudautomation Credentials Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cloudautomation Endpoint</em>' attribute.
-	 * @see #getCloudautomationEndpoint()
+	 * @param value the new value of the '<em>Cloudautomation Credentials Endpoint</em>' attribute.
+	 * @see #getCloudautomationCredentialsEndpoint()
 	 * @generated
 	 */
-	void setCloudautomationEndpoint(String value);
+	void setCloudautomationCredentialsEndpoint(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -249,16 +249,16 @@ public class CloudautomationTables
 		}
 
 
-		public static final /*@NonNull*/ ExecutorProperty _Credentials__cloudautomationEndpoint = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT, Types._Credentials, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Credentials__password = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__PASSWORD, Types._Credentials, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Credentials__username = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__USERNAME, Types._Credentials, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Credentials__cloudautomationCredentialsEndpoint = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT, Types._Credentials, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Credentials__cloudautomationCredentialsPassword = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD, Types._Credentials, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Credentials__cloudautomationCredentialsUsername = new EcoreExecutorProperty(CloudautomationPackage.Literals.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME, Types._Credentials, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Instancetemplate__imageName = new EcoreExecutorProperty(CloudautomationPackage.Literals.INSTANCETEMPLATE__IMAGE_NAME, Types._Instancetemplate, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Instancetemplate__cloudautomationInstancetemplateImageName = new EcoreExecutorProperty(CloudautomationPackage.Literals.INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME, Types._Instancetemplate, 0);
 
-		public static final /*@NonNull*/ ExecutorProperty _Provider__endpoint = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__ENDPOINT, Types._Provider, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Provider__password = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__PASSWORD, Types._Provider, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Provider__type = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__TYPE, Types._Provider, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Provider__username = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__USERNAME, Types._Provider, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Provider__cloudautomationProviderEndpoint = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT, Types._Provider, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Provider__cloudautomationProviderPassword = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD, Types._Provider, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Provider__cloudautomationProviderType = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE, Types._Provider, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Provider__cloudautomationProviderUsername = new EcoreExecutorProperty(CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME, Types._Provider, 3);
 		static {
 			Init.initEnd();
 		}
@@ -655,20 +655,20 @@ public class CloudautomationTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cloudautomationstorage = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Credentials = {
-			CloudautomationTables.Properties._Credentials__cloudautomationEndpoint,
-			CloudautomationTables.Properties._Credentials__password,
-			CloudautomationTables.Properties._Credentials__username
+			CloudautomationTables.Properties._Credentials__cloudautomationCredentialsEndpoint,
+			CloudautomationTables.Properties._Credentials__cloudautomationCredentialsPassword,
+			CloudautomationTables.Properties._Credentials__cloudautomationCredentialsUsername
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Instancetemplate = {
-			CloudautomationTables.Properties._Instancetemplate__imageName
+			CloudautomationTables.Properties._Instancetemplate__cloudautomationInstancetemplateImageName
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Provider = {
-			CloudautomationTables.Properties._Provider__endpoint,
-			CloudautomationTables.Properties._Provider__password,
-			CloudautomationTables.Properties._Provider__type,
-			CloudautomationTables.Properties._Provider__username
+			CloudautomationTables.Properties._Provider__cloudautomationProviderEndpoint,
+			CloudautomationTables.Properties._Provider__cloudautomationProviderPassword,
+			CloudautomationTables.Properties._Provider__cloudautomationProviderType,
+			CloudautomationTables.Properties._Provider__cloudautomationProviderUsername
 		};
 
 		/**

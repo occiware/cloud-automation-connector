@@ -57,7 +57,7 @@ public class CredentialsConnector extends org.occiware.cloudautomation.impl.Cred
 
 	private String requestSessionId(){
         LOGGER.info("Try to get the sessionid from : "+getUrl());
-        String bodyContent = "username="+username+"&password="+password;
+        String bodyContent = "username="+cloudautomationCredentialsUsername+"&password="+cloudautomationCredentialsPassword;
         Response response = given().body(bodyContent)
                 .when()
                 .post(getUrl())

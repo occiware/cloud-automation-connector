@@ -203,7 +203,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProvider_Username() {
+	public EAttribute getProvider_CloudautomationProviderUsername() {
 		return (EAttribute)providerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -212,7 +212,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProvider_Type() {
+	public EAttribute getProvider_CloudautomationProviderType() {
 		return (EAttribute)providerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -221,7 +221,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProvider_Password() {
+	public EAttribute getProvider_CloudautomationProviderPassword() {
 		return (EAttribute)providerEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -230,7 +230,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProvider_Endpoint() {
+	public EAttribute getProvider_CloudautomationProviderEndpoint() {
 		return (EAttribute)providerEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -257,7 +257,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredentials_Password() {
+	public EAttribute getCredentials_CloudautomationCredentialsPassword() {
 		return (EAttribute)credentialsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -266,7 +266,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredentials_Username() {
+	public EAttribute getCredentials_CloudautomationCredentialsUsername() {
 		return (EAttribute)credentialsEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -275,7 +275,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredentials_CloudautomationEndpoint() {
+	public EAttribute getCredentials_CloudautomationCredentialsEndpoint() {
 		return (EAttribute)credentialsEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -302,7 +302,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstancetemplate_ImageName() {
+	public EAttribute getInstancetemplate_CloudautomationInstancetemplateImageName() {
 		return (EAttribute)instancetemplateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -350,20 +350,20 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 		cloudautomationstorageEClass = createEClass(CLOUDAUTOMATIONSTORAGE);
 
 		providerEClass = createEClass(PROVIDER);
-		createEAttribute(providerEClass, PROVIDER__USERNAME);
-		createEAttribute(providerEClass, PROVIDER__TYPE);
-		createEAttribute(providerEClass, PROVIDER__PASSWORD);
-		createEAttribute(providerEClass, PROVIDER__ENDPOINT);
+		createEAttribute(providerEClass, PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME);
+		createEAttribute(providerEClass, PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE);
+		createEAttribute(providerEClass, PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD);
+		createEAttribute(providerEClass, PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT);
 		createEOperation(providerEClass, PROVIDER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		credentialsEClass = createEClass(CREDENTIALS);
-		createEAttribute(credentialsEClass, CREDENTIALS__PASSWORD);
-		createEAttribute(credentialsEClass, CREDENTIALS__USERNAME);
-		createEAttribute(credentialsEClass, CREDENTIALS__CLOUDAUTOMATION_ENDPOINT);
+		createEAttribute(credentialsEClass, CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD);
+		createEAttribute(credentialsEClass, CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME);
+		createEAttribute(credentialsEClass, CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT);
 		createEOperation(credentialsEClass, CREDENTIALS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		instancetemplateEClass = createEClass(INSTANCETEMPLATE);
-		createEAttribute(instancetemplateEClass, INSTANCETEMPLATE__IMAGE_NAME);
+		createEAttribute(instancetemplateEClass, INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME);
 		createEOperation(instancetemplateEClass, INSTANCETEMPLATE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
@@ -414,10 +414,10 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 		initEClass(cloudautomationstorageEClass, Cloudautomationstorage.class, "Cloudautomationstorage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(providerEClass, Provider.class, "Provider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProvider_Username(), theOCCIPackage.getString(), "username", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProvider_Type(), theOCCIPackage.getString(), "type", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProvider_Password(), theOCCIPackage.getString(), "password", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProvider_Endpoint(), theOCCIPackage.getString(), "endpoint", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvider_CloudautomationProviderUsername(), theOCCIPackage.getString(), "cloudautomationProviderUsername", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvider_CloudautomationProviderType(), theOCCIPackage.getString(), "cloudautomationProviderType", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvider_CloudautomationProviderPassword(), theOCCIPackage.getString(), "cloudautomationProviderPassword", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvider_CloudautomationProviderEndpoint(), theOCCIPackage.getString(), "cloudautomationProviderEndpoint", null, 1, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getProvider__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -429,9 +429,9 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(credentialsEClass, Credentials.class, "Credentials", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCredentials_Password(), theOCCIPackage.getString(), "password", null, 1, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredentials_Username(), theOCCIPackage.getString(), "username", null, 1, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredentials_CloudautomationEndpoint(), theOCCIPackage.getString(), "cloudautomationEndpoint", "localhost:8080", 0, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCredentials_CloudautomationCredentialsPassword(), theOCCIPackage.getString(), "cloudautomationCredentialsPassword", null, 1, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCredentials_CloudautomationCredentialsUsername(), theOCCIPackage.getString(), "cloudautomationCredentialsUsername", null, 1, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCredentials_CloudautomationCredentialsEndpoint(), theOCCIPackage.getString(), "cloudautomationCredentialsEndpoint", "localhost:8080", 0, 1, Credentials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getCredentials__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -443,7 +443,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instancetemplateEClass, Instancetemplate.class, "Instancetemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstancetemplate_ImageName(), theOCCIPackage.getString(), "imageName", null, 1, 1, Instancetemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancetemplate_CloudautomationInstancetemplateImageName(), theOCCIPackage.getString(), "cloudautomationInstancetemplateImageName", null, 1, 1, Instancetemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getInstancetemplate__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

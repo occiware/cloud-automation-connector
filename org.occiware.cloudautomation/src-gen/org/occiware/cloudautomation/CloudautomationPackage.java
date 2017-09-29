@@ -759,40 +759,40 @@ public interface CloudautomationPackage extends EPackage {
 	int PROVIDER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Provider Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Provider Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__TYPE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Provider Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Endpoint</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Provider Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__ENDPOINT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -859,31 +859,31 @@ public interface CloudautomationPackage extends EPackage {
 	int CREDENTIALS__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Credentials Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIALS__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Credentials Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIALS__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cloudautomation Endpoint</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Credentials Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIALS__CLOUDAUTOMATION_ENDPOINT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Credentials</em>' class.
@@ -911,7 +911,6 @@ public interface CloudautomationPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDENTIALS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
 
 	/**
 	 * The meta object id for the '{@link org.occiware.cloudautomation.impl.InstancetemplateImpl <em>Instancetemplate</em>}' class.
@@ -951,13 +950,13 @@ public interface CloudautomationPackage extends EPackage {
 	int INSTANCETEMPLATE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Image Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Cloudautomation Instancetemplate Image Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCETEMPLATE__IMAGE_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Instancetemplate</em>' class.
@@ -1028,48 +1027,48 @@ public interface CloudautomationPackage extends EPackage {
 	EClass getProvider();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getUsername <em>Username</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderUsername <em>Cloudautomation Provider Username</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see org.occiware.cloudautomation.Provider#getUsername()
+	 * @return the meta object for the attribute '<em>Cloudautomation Provider Username</em>'.
+	 * @see org.occiware.cloudautomation.Provider#getCloudautomationProviderUsername()
 	 * @see #getProvider()
 	 * @generated
 	 */
-	EAttribute getProvider_Username();
+	EAttribute getProvider_CloudautomationProviderUsername();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderType <em>Cloudautomation Provider Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see org.occiware.cloudautomation.Provider#getType()
+	 * @return the meta object for the attribute '<em>Cloudautomation Provider Type</em>'.
+	 * @see org.occiware.cloudautomation.Provider#getCloudautomationProviderType()
 	 * @see #getProvider()
 	 * @generated
 	 */
-	EAttribute getProvider_Type();
+	EAttribute getProvider_CloudautomationProviderType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getPassword <em>Password</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderPassword <em>Cloudautomation Provider Password</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see org.occiware.cloudautomation.Provider#getPassword()
+	 * @return the meta object for the attribute '<em>Cloudautomation Provider Password</em>'.
+	 * @see org.occiware.cloudautomation.Provider#getCloudautomationProviderPassword()
 	 * @see #getProvider()
 	 * @generated
 	 */
-	EAttribute getProvider_Password();
+	EAttribute getProvider_CloudautomationProviderPassword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getEndpoint <em>Endpoint</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderEndpoint <em>Cloudautomation Provider Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Endpoint</em>'.
-	 * @see org.occiware.cloudautomation.Provider#getEndpoint()
+	 * @return the meta object for the attribute '<em>Cloudautomation Provider Endpoint</em>'.
+	 * @see org.occiware.cloudautomation.Provider#getCloudautomationProviderEndpoint()
 	 * @see #getProvider()
 	 * @generated
 	 */
-	EAttribute getProvider_Endpoint();
+	EAttribute getProvider_CloudautomationProviderEndpoint();
 
 	/**
 	 * Returns the meta object for the '{@link org.occiware.cloudautomation.Provider#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -1092,37 +1091,37 @@ public interface CloudautomationPackage extends EPackage {
 	EClass getCredentials();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getPassword <em>Password</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsPassword <em>Cloudautomation Credentials Password</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see org.occiware.cloudautomation.Credentials#getPassword()
+	 * @return the meta object for the attribute '<em>Cloudautomation Credentials Password</em>'.
+	 * @see org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsPassword()
 	 * @see #getCredentials()
 	 * @generated
 	 */
-	EAttribute getCredentials_Password();
+	EAttribute getCredentials_CloudautomationCredentialsPassword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getUsername <em>Username</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsUsername <em>Cloudautomation Credentials Username</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see org.occiware.cloudautomation.Credentials#getUsername()
+	 * @return the meta object for the attribute '<em>Cloudautomation Credentials Username</em>'.
+	 * @see org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsUsername()
 	 * @see #getCredentials()
 	 * @generated
 	 */
-	EAttribute getCredentials_Username();
+	EAttribute getCredentials_CloudautomationCredentialsUsername();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getCloudautomationEndpoint <em>Cloudautomation Endpoint</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsEndpoint <em>Cloudautomation Credentials Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cloudautomation Endpoint</em>'.
-	 * @see org.occiware.cloudautomation.Credentials#getCloudautomationEndpoint()
+	 * @return the meta object for the attribute '<em>Cloudautomation Credentials Endpoint</em>'.
+	 * @see org.occiware.cloudautomation.Credentials#getCloudautomationCredentialsEndpoint()
 	 * @see #getCredentials()
 	 * @generated
 	 */
-	EAttribute getCredentials_CloudautomationEndpoint();
+	EAttribute getCredentials_CloudautomationCredentialsEndpoint();
 
 	/**
 	 * Returns the meta object for the '{@link org.occiware.cloudautomation.Credentials#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -1145,15 +1144,15 @@ public interface CloudautomationPackage extends EPackage {
 	EClass getInstancetemplate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Instancetemplate#getImageName <em>Image Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.occiware.cloudautomation.Instancetemplate#getCloudautomationInstancetemplateImageName <em>Cloudautomation Instancetemplate Image Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Image Name</em>'.
-	 * @see org.occiware.cloudautomation.Instancetemplate#getImageName()
+	 * @return the meta object for the attribute '<em>Cloudautomation Instancetemplate Image Name</em>'.
+	 * @see org.occiware.cloudautomation.Instancetemplate#getCloudautomationInstancetemplateImageName()
 	 * @see #getInstancetemplate()
 	 * @generated
 	 */
-	EAttribute getInstancetemplate_ImageName();
+	EAttribute getInstancetemplate_CloudautomationInstancetemplateImageName();
 
 	/**
 	 * Returns the meta object for the '{@link org.occiware.cloudautomation.Instancetemplate#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -1229,36 +1228,36 @@ public interface CloudautomationPackage extends EPackage {
 		EClass PROVIDER = eINSTANCE.getProvider();
 
 		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Provider Username</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROVIDER__USERNAME = eINSTANCE.getProvider_Username();
+		EAttribute PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME = eINSTANCE.getProvider_CloudautomationProviderUsername();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Provider Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROVIDER__TYPE = eINSTANCE.getProvider_Type();
+		EAttribute PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE = eINSTANCE.getProvider_CloudautomationProviderType();
 
 		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Provider Password</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROVIDER__PASSWORD = eINSTANCE.getProvider_Password();
+		EAttribute PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD = eINSTANCE.getProvider_CloudautomationProviderPassword();
 
 		/**
-		 * The meta object literal for the '<em><b>Endpoint</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Provider Endpoint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROVIDER__ENDPOINT = eINSTANCE.getProvider_Endpoint();
+		EAttribute PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT = eINSTANCE.getProvider_CloudautomationProviderEndpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
@@ -1279,28 +1278,28 @@ public interface CloudautomationPackage extends EPackage {
 		EClass CREDENTIALS = eINSTANCE.getCredentials();
 
 		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Credentials Password</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIALS__PASSWORD = eINSTANCE.getCredentials_Password();
+		EAttribute CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD = eINSTANCE.getCredentials_CloudautomationCredentialsPassword();
 
 		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Credentials Username</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIALS__USERNAME = eINSTANCE.getCredentials_Username();
+		EAttribute CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME = eINSTANCE.getCredentials_CloudautomationCredentialsUsername();
 
 		/**
-		 * The meta object literal for the '<em><b>Cloudautomation Endpoint</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Credentials Endpoint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIALS__CLOUDAUTOMATION_ENDPOINT = eINSTANCE.getCredentials_CloudautomationEndpoint();
+		EAttribute CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT = eINSTANCE.getCredentials_CloudautomationCredentialsEndpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
@@ -1321,12 +1320,12 @@ public interface CloudautomationPackage extends EPackage {
 		EClass INSTANCETEMPLATE = eINSTANCE.getInstancetemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Image Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cloudautomation Instancetemplate Image Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INSTANCETEMPLATE__IMAGE_NAME = eINSTANCE.getInstancetemplate_ImageName();
+		EAttribute INSTANCETEMPLATE__CLOUDAUTOMATION_INSTANCETEMPLATE_IMAGE_NAME = eINSTANCE.getInstancetemplate_CloudautomationInstancetemplateImageName();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.

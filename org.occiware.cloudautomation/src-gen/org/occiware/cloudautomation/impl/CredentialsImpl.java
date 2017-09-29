@@ -58,73 +58,73 @@ import org.occiware.cloudautomation.Credentials;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getPassword <em>Password</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getUsername <em>Username</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getCloudautomationEndpoint <em>Cloudautomation Endpoint</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getCloudautomationCredentialsPassword <em>Cloudautomation Credentials Password</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getCloudautomationCredentialsUsername <em>Cloudautomation Credentials Username</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.CredentialsImpl#getCloudautomationCredentialsEndpoint <em>Cloudautomation Credentials Endpoint</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	/**
-	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationCredentialsPassword() <em>Cloudautomation Credentials Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPassword()
+	 * @see #getCloudautomationCredentialsPassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PASSWORD_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_CREDENTIALS_PASSWORD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationCredentialsPassword() <em>Cloudautomation Credentials Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPassword()
+	 * @see #getCloudautomationCredentialsPassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected String password = PASSWORD_EDEFAULT;
+	protected String cloudautomationCredentialsPassword = CLOUDAUTOMATION_CREDENTIALS_PASSWORD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationCredentialsUsername() <em>Cloudautomation Credentials Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsername()
+	 * @see #getCloudautomationCredentialsUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USERNAME_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_CREDENTIALS_USERNAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationCredentialsUsername() <em>Cloudautomation Credentials Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsername()
+	 * @see #getCloudautomationCredentialsUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected String username = USERNAME_EDEFAULT;
+	protected String cloudautomationCredentialsUsername = CLOUDAUTOMATION_CREDENTIALS_USERNAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCloudautomationEndpoint() <em>Cloudautomation Endpoint</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationCredentialsEndpoint() <em>Cloudautomation Credentials Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCloudautomationEndpoint()
+	 * @see #getCloudautomationCredentialsEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLOUDAUTOMATION_ENDPOINT_EDEFAULT = "localhost:8080";
+	protected static final String CLOUDAUTOMATION_CREDENTIALS_ENDPOINT_EDEFAULT = "localhost:8080";
 
 	/**
-	 * The cached value of the '{@link #getCloudautomationEndpoint() <em>Cloudautomation Endpoint</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationCredentialsEndpoint() <em>Cloudautomation Credentials Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCloudautomationEndpoint()
+	 * @see #getCloudautomationCredentialsEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected String cloudautomationEndpoint = CLOUDAUTOMATION_ENDPOINT_EDEFAULT;
+	protected String cloudautomationCredentialsEndpoint = CLOUDAUTOMATION_CREDENTIALS_ENDPOINT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,8 +150,8 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPassword() {
-		return password;
+	public String getCloudautomationCredentialsPassword() {
+		return cloudautomationCredentialsPassword;
 	}
 
 	/**
@@ -159,11 +159,11 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPassword(String newPassword) {
-		String oldPassword = password;
-		password = newPassword;
+	public void setCloudautomationCredentialsPassword(String newCloudautomationCredentialsPassword) {
+		String oldCloudautomationCredentialsPassword = cloudautomationCredentialsPassword;
+		cloudautomationCredentialsPassword = newCloudautomationCredentialsPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD, oldCloudautomationCredentialsPassword, cloudautomationCredentialsPassword));
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUsername() {
-		return username;
+	public String getCloudautomationCredentialsUsername() {
+		return cloudautomationCredentialsUsername;
 	}
 
 	/**
@@ -180,11 +180,11 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUsername(String newUsername) {
-		String oldUsername = username;
-		username = newUsername;
+	public void setCloudautomationCredentialsUsername(String newCloudautomationCredentialsUsername) {
+		String oldCloudautomationCredentialsUsername = cloudautomationCredentialsUsername;
+		cloudautomationCredentialsUsername = newCloudautomationCredentialsUsername;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__USERNAME, oldUsername, username));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME, oldCloudautomationCredentialsUsername, cloudautomationCredentialsUsername));
 	}
 
 	/**
@@ -192,8 +192,8 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCloudautomationEndpoint() {
-		return cloudautomationEndpoint;
+	public String getCloudautomationCredentialsEndpoint() {
+		return cloudautomationCredentialsEndpoint;
 	}
 
 	/**
@@ -201,11 +201,11 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCloudautomationEndpoint(String newCloudautomationEndpoint) {
-		String oldCloudautomationEndpoint = cloudautomationEndpoint;
-		cloudautomationEndpoint = newCloudautomationEndpoint;
+	public void setCloudautomationCredentialsEndpoint(String newCloudautomationCredentialsEndpoint) {
+		String oldCloudautomationCredentialsEndpoint = cloudautomationCredentialsEndpoint;
+		cloudautomationCredentialsEndpoint = newCloudautomationCredentialsEndpoint;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT, oldCloudautomationEndpoint, cloudautomationEndpoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT, oldCloudautomationCredentialsEndpoint, cloudautomationCredentialsEndpoint));
 	}
 
 	/**
@@ -274,12 +274,12 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudautomationPackage.CREDENTIALS__PASSWORD:
-				return getPassword();
-			case CloudautomationPackage.CREDENTIALS__USERNAME:
-				return getUsername();
-			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT:
-				return getCloudautomationEndpoint();
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD:
+				return getCloudautomationCredentialsPassword();
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME:
+				return getCloudautomationCredentialsUsername();
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT:
+				return getCloudautomationCredentialsEndpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,14 +292,14 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudautomationPackage.CREDENTIALS__PASSWORD:
-				setPassword((String)newValue);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD:
+				setCloudautomationCredentialsPassword((String)newValue);
 				return;
-			case CloudautomationPackage.CREDENTIALS__USERNAME:
-				setUsername((String)newValue);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME:
+				setCloudautomationCredentialsUsername((String)newValue);
 				return;
-			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT:
-				setCloudautomationEndpoint((String)newValue);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT:
+				setCloudautomationCredentialsEndpoint((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,14 +313,14 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.CREDENTIALS__PASSWORD:
-				setPassword(PASSWORD_EDEFAULT);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD:
+				setCloudautomationCredentialsPassword(CLOUDAUTOMATION_CREDENTIALS_PASSWORD_EDEFAULT);
 				return;
-			case CloudautomationPackage.CREDENTIALS__USERNAME:
-				setUsername(USERNAME_EDEFAULT);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME:
+				setCloudautomationCredentialsUsername(CLOUDAUTOMATION_CREDENTIALS_USERNAME_EDEFAULT);
 				return;
-			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT:
-				setCloudautomationEndpoint(CLOUDAUTOMATION_ENDPOINT_EDEFAULT);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT:
+				setCloudautomationCredentialsEndpoint(CLOUDAUTOMATION_CREDENTIALS_ENDPOINT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -334,12 +334,12 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.CREDENTIALS__PASSWORD:
-				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case CloudautomationPackage.CREDENTIALS__USERNAME:
-				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
-			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_ENDPOINT:
-				return CLOUDAUTOMATION_ENDPOINT_EDEFAULT == null ? cloudautomationEndpoint != null : !CLOUDAUTOMATION_ENDPOINT_EDEFAULT.equals(cloudautomationEndpoint);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_PASSWORD:
+				return CLOUDAUTOMATION_CREDENTIALS_PASSWORD_EDEFAULT == null ? cloudautomationCredentialsPassword != null : !CLOUDAUTOMATION_CREDENTIALS_PASSWORD_EDEFAULT.equals(cloudautomationCredentialsPassword);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_USERNAME:
+				return CLOUDAUTOMATION_CREDENTIALS_USERNAME_EDEFAULT == null ? cloudautomationCredentialsUsername != null : !CLOUDAUTOMATION_CREDENTIALS_USERNAME_EDEFAULT.equals(cloudautomationCredentialsUsername);
+			case CloudautomationPackage.CREDENTIALS__CLOUDAUTOMATION_CREDENTIALS_ENDPOINT:
+				return CLOUDAUTOMATION_CREDENTIALS_ENDPOINT_EDEFAULT == null ? cloudautomationCredentialsEndpoint != null : !CLOUDAUTOMATION_CREDENTIALS_ENDPOINT_EDEFAULT.equals(cloudautomationCredentialsEndpoint);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -369,12 +369,12 @@ public class CredentialsImpl extends MixinBaseImpl implements Credentials {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (password: ");
-		result.append(password);
-		result.append(", username: ");
-		result.append(username);
-		result.append(", cloudautomationEndpoint: ");
-		result.append(cloudautomationEndpoint);
+		result.append(" (cloudautomationCredentialsPassword: ");
+		result.append(cloudautomationCredentialsPassword);
+		result.append(", cloudautomationCredentialsUsername: ");
+		result.append(cloudautomationCredentialsUsername);
+		result.append(", cloudautomationCredentialsEndpoint: ");
+		result.append(cloudautomationCredentialsEndpoint);
 		result.append(')');
 		return result.toString();
 	}

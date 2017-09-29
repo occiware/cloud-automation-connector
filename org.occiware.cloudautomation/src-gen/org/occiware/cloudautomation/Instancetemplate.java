@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.Instancetemplate#getImageName <em>Image Name</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Instancetemplate#getCloudautomationInstancetemplateImageName <em>Cloudautomation Instancetemplate Image Name</em>}</li>
  * </ul>
  *
  * @see org.occiware.cloudautomation.CloudautomationPackage#getInstancetemplate()
@@ -36,30 +36,30 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface Instancetemplate extends MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Image Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Instancetemplate Image Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the id of the image that will be deployed
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Image Name</em>' attribute.
-	 * @see #setImageName(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getInstancetemplate_ImageName()
+	 * @return the value of the '<em>Cloudautomation Instancetemplate Image Name</em>' attribute.
+	 * @see #setCloudautomationInstancetemplateImageName(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getInstancetemplate_CloudautomationInstancetemplateImageName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Instancetemplate!imageName'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Instancetemplate!cloudautomationInstancetemplateImageName'"
 	 * @generated
 	 */
-	String getImageName();
+	String getCloudautomationInstancetemplateImageName();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Instancetemplate#getImageName <em>Image Name</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Instancetemplate#getCloudautomationInstancetemplateImageName <em>Cloudautomation Instancetemplate Image Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Image Name</em>' attribute.
-	 * @see #getImageName()
+	 * @param value the new value of the '<em>Cloudautomation Instancetemplate Image Name</em>' attribute.
+	 * @see #getCloudautomationInstancetemplateImageName()
 	 * @generated
 	 */
-	void setImageName(String value);
+	void setCloudautomationInstancetemplateImageName(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

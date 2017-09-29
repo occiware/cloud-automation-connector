@@ -27,10 +27,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.Provider#getUsername <em>Username</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.Provider#getType <em>Type</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.Provider#getPassword <em>Password</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.Provider#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderUsername <em>Cloudautomation Provider Username</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderType <em>Cloudautomation Provider Type</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderPassword <em>Cloudautomation Provider Password</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderEndpoint <em>Cloudautomation Provider Endpoint</em>}</li>
  * </ul>
  *
  * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider()
@@ -39,108 +39,109 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface Provider extends MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Username</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Provider Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * the username to connect to the provider
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Username</em>' attribute.
-	 * @see #setUsername(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_Username()
+	 * @return the value of the '<em>Cloudautomation Provider Username</em>' attribute.
+	 * @see #setCloudautomationProviderUsername(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_CloudautomationProviderUsername()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!username'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!cloudautomationProviderUsername'"
 	 * @generated
 	 */
-	String getUsername();
+	String getCloudautomationProviderUsername();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getUsername <em>Username</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderUsername <em>Cloudautomation Provider Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Username</em>' attribute.
-	 * @see #getUsername()
+	 * @param value the new value of the '<em>Cloudautomation Provider Username</em>' attribute.
+	 * @see #getCloudautomationProviderUsername()
 	 * @generated
 	 */
-	void setUsername(String value);
+	void setCloudautomationProviderUsername(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Provider Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the type of infrastructure used
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_Type()
+	 * @return the value of the '<em>Cloudautomation Provider Type</em>' attribute.
+	 * @see #setCloudautomationProviderType(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_CloudautomationProviderType()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!type'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!cloudautomationProviderType'"
 	 * @generated
 	 */
-	String getType();
+	String getCloudautomationProviderType();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderType <em>Cloudautomation Provider Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
+	 * @param value the new value of the '<em>Cloudautomation Provider Type</em>' attribute.
+	 * @see #getCloudautomationProviderType()
 	 * @generated
 	 */
-	void setType(String value);
+	void setCloudautomationProviderType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Password</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Provider Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the password to connect to the provider
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Password</em>' attribute.
-	 * @see #setPassword(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_Password()
+	 * @return the value of the '<em>Cloudautomation Provider Password</em>' attribute.
+	 * @see #setCloudautomationProviderPassword(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_CloudautomationProviderPassword()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!password'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!cloudautomationProviderPassword'"
 	 * @generated
 	 */
-	String getPassword();
+	String getCloudautomationProviderPassword();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getPassword <em>Password</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderPassword <em>Cloudautomation Provider Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Password</em>' attribute.
-	 * @see #getPassword()
+	 * @param value the new value of the '<em>Cloudautomation Provider Password</em>' attribute.
+	 * @see #getCloudautomationProviderPassword()
 	 * @generated
 	 */
-	void setPassword(String value);
+	void setCloudautomationProviderPassword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Endpoint</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cloudautomation Provider Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * the provider platform url
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Endpoint</em>' attribute.
-	 * @see #setEndpoint(String)
-	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_Endpoint()
+	 * @return the value of the '<em>Cloudautomation Provider Endpoint</em>' attribute.
+	 * @see #setCloudautomationProviderEndpoint(String)
+	 * @see org.occiware.cloudautomation.CloudautomationPackage#getProvider_CloudautomationProviderEndpoint()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!endpoint'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.occiware.cloudautomation/ecore!Provider!cloudautomationProviderEndpoint'"
 	 * @generated
 	 */
-	String getEndpoint();
+	String getCloudautomationProviderEndpoint();
 
 	/**
-	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getEndpoint <em>Endpoint</em>}' attribute.
+	 * Sets the value of the '{@link org.occiware.cloudautomation.Provider#getCloudautomationProviderEndpoint <em>Cloudautomation Provider Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Endpoint</em>' attribute.
-	 * @see #getEndpoint()
+	 * @param value the new value of the '<em>Cloudautomation Provider Endpoint</em>' attribute.
+	 * @see #getCloudautomationProviderEndpoint()
 	 * @generated
 	 */
-	void setEndpoint(String value);
+	void setCloudautomationProviderEndpoint(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

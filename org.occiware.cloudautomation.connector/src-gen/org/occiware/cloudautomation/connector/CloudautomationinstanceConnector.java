@@ -65,6 +65,9 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 
+		Optional<ProviderConnector> test = getMixin(ProviderConnector.class);
+		System.out.println("test "+test);
+
 		ProviderConnector provider = getMixin(ProviderConnector.class)
                 .orElseThrow(() -> new MissingParametersException("Provider mixin was not associated to the instance"));
 
@@ -88,11 +91,11 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
         genericInfo.put("pca.action.type","create");
 
 	    variables.put("infraName",provider.getEntity().getTitle());
-	    variables.put("infraType",provider.getType());
-	    variables.put("infraEndpoint",provider.getEndpoint());
+	    variables.put("infraType",provider.getCloudautomationProviderType());
+	    variables.put("infraEndpoint",provider.getCloudautomationProviderEndpoint());
         variables.put("instanceName",this.getTitle());
         variables.put("architecture",this.getOcciComputeArchitecture().getName());
-        variables.put("imageName",image.getImageName());
+        variables.put("imageName",image.getCloudautomationInstancetemplateImageName());
 
 	    optionalResourceTpl.ifPresent(resourceTpl -> variables.put("size",resourceTpl.getEntity().getTitle()));
         optionalUserData.ifPresent(userData -> variables.put("userdata",userData.getEntity().getTitle()));
@@ -105,6 +108,7 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
         }
 
 	}
+
 	// End of user code
 
 	// Start of user code Cloudautomationinstance_occiRetrieve_method
@@ -147,36 +151,48 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	// Cloudautomationinstance actions.
 	//
 
+	/*public ProviderConnector getMixinSshUserData() {
+		List<MixinBase> mixinBase = this.getParts();
+		ProviderConnector userData = null;
+		for (MixinBase mixinB : mixinBase) {
+			if (mixinB instanceof ProviderConnector) {
+				userData = (ProviderConnector) mixinB;
+				break;
+			}
+		}
+		return userData;
+	}*/
+
     /**
      * Get the mixin base instance tClass to apply on
      * instance.
      */
-    public <T> Optional<T> getMixin(Class<T> tClass){
-        List<Class> tClasses = new ArrayList<>();
-        tClasses.add(tClass);
-        return getMixin(tClasses);
+    public <T extends MixinBase> Optional<T> getMixin(Class<T> tClass){
+		List<MixinBase> mixinBase = this.getParts();
+		return mixinBase.stream()
+				.filter(mixinB -> tClass.isInstance(mixinB))
+				.findFirst()
+				.map(mixin -> (T) mixin);
     }
 
     /**
      * Get the mixin base instance tClass to apply on
      * instance.
      */
-    public <T> Optional<T> getMixin(List<Class> tClasses){
+    public <T extends MixinBase> Optional<T> getMixin(List<Class<T>> tClasses){
         List<MixinBase> mixinBases = this.getParts();
-        T mixin = null;
-        mixinBases.stream()
-                .filter(mixinBase -> tClasses.stream()
-                        .anyMatch(tClass -> tClass.isInstance(mixinBase)))
-                .findFirst();
+        return mixinBases.stream()
+                .filter(mixinB -> tClasses.stream()
+                        .anyMatch(tClass -> tClass.isInstance(mixinB)))
+                .findFirst()
+				.map(mixin -> (T) mixin);
+	}
 
-        return Optional.ofNullable(mixin);
-    }
-
-    private List<Class> getResourceTplList(){
-        List<Class> resourceTplList = new ArrayList<>();
-        resourceTplList.add(Small.class);
-        resourceTplList.add(Medium.class);
-        resourceTplList.add(Large.class);
+    private <T extends MixinBase> List<Class<T>> getResourceTplList(){
+        List<Class<T>> resourceTplList = new ArrayList<>();
+        resourceTplList.add((Class<T>) Small.class);
+        resourceTplList.add((Class<T>) Medium.class);
+        resourceTplList.add((Class<T>) Large.class);
         return resourceTplList;
     }
 

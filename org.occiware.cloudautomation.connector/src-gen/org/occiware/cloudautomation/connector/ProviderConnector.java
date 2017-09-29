@@ -38,7 +38,7 @@ public class ProviderConnector extends org.occiware.cloudautomation.impl.Provide
 	 */
 	ProviderConnector()
 	{
-	    LOGGER.info("Mixin provider "+this.getEntity().getTitle()+" added");
+	    LOGGER.info("Mixin provider added");
 	}
 
 	public String getInfrastructureUrl(){

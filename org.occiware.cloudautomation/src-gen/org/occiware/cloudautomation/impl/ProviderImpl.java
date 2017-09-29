@@ -58,94 +58,94 @@ import org.occiware.cloudautomation.Provider;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getUsername <em>Username</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getPassword <em>Password</em>}</li>
- *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getCloudautomationProviderUsername <em>Cloudautomation Provider Username</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getCloudautomationProviderType <em>Cloudautomation Provider Type</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getCloudautomationProviderPassword <em>Cloudautomation Provider Password</em>}</li>
+ *   <li>{@link org.occiware.cloudautomation.impl.ProviderImpl#getCloudautomationProviderEndpoint <em>Cloudautomation Provider Endpoint</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ProviderImpl extends MixinBaseImpl implements Provider {
 	/**
-	 * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationProviderUsername() <em>Cloudautomation Provider Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsername()
+	 * @see #getCloudautomationProviderUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USERNAME_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_PROVIDER_USERNAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationProviderUsername() <em>Cloudautomation Provider Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsername()
+	 * @see #getCloudautomationProviderUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected String username = USERNAME_EDEFAULT;
+	protected String cloudautomationProviderUsername = CLOUDAUTOMATION_PROVIDER_USERNAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationProviderType() <em>Cloudautomation Provider Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getCloudautomationProviderType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_PROVIDER_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationProviderType() <em>Cloudautomation Provider Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getCloudautomationProviderType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
+	protected String cloudautomationProviderType = CLOUDAUTOMATION_PROVIDER_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationProviderPassword() <em>Cloudautomation Provider Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPassword()
+	 * @see #getCloudautomationProviderPassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PASSWORD_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_PROVIDER_PASSWORD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationProviderPassword() <em>Cloudautomation Provider Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPassword()
+	 * @see #getCloudautomationProviderPassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected String password = PASSWORD_EDEFAULT;
+	protected String cloudautomationProviderPassword = CLOUDAUTOMATION_PROVIDER_PASSWORD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * The default value of the '{@link #getCloudautomationProviderEndpoint() <em>Cloudautomation Provider Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEndpoint()
+	 * @see #getCloudautomationProviderEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ENDPOINT_EDEFAULT = null;
+	protected static final String CLOUDAUTOMATION_PROVIDER_ENDPOINT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * The cached value of the '{@link #getCloudautomationProviderEndpoint() <em>Cloudautomation Provider Endpoint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEndpoint()
+	 * @see #getCloudautomationProviderEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected String endpoint = ENDPOINT_EDEFAULT;
+	protected String cloudautomationProviderEndpoint = CLOUDAUTOMATION_PROVIDER_ENDPOINT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,8 +171,8 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUsername() {
-		return username;
+	public String getCloudautomationProviderUsername() {
+		return cloudautomationProviderUsername;
 	}
 
 	/**
@@ -180,11 +180,11 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUsername(String newUsername) {
-		String oldUsername = username;
-		username = newUsername;
+	public void setCloudautomationProviderUsername(String newCloudautomationProviderUsername) {
+		String oldCloudautomationProviderUsername = cloudautomationProviderUsername;
+		cloudautomationProviderUsername = newCloudautomationProviderUsername;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__USERNAME, oldUsername, username));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME, oldCloudautomationProviderUsername, cloudautomationProviderUsername));
 	}
 
 	/**
@@ -192,8 +192,8 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
-		return type;
+	public String getCloudautomationProviderType() {
+		return cloudautomationProviderType;
 	}
 
 	/**
@@ -201,11 +201,11 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public void setCloudautomationProviderType(String newCloudautomationProviderType) {
+		String oldCloudautomationProviderType = cloudautomationProviderType;
+		cloudautomationProviderType = newCloudautomationProviderType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE, oldCloudautomationProviderType, cloudautomationProviderType));
 	}
 
 	/**
@@ -213,8 +213,8 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPassword() {
-		return password;
+	public String getCloudautomationProviderPassword() {
+		return cloudautomationProviderPassword;
 	}
 
 	/**
@@ -222,11 +222,11 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPassword(String newPassword) {
-		String oldPassword = password;
-		password = newPassword;
+	public void setCloudautomationProviderPassword(String newCloudautomationProviderPassword) {
+		String oldCloudautomationProviderPassword = cloudautomationProviderPassword;
+		cloudautomationProviderPassword = newCloudautomationProviderPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD, oldCloudautomationProviderPassword, cloudautomationProviderPassword));
 	}
 
 	/**
@@ -234,8 +234,8 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getEndpoint() {
-		return endpoint;
+	public String getCloudautomationProviderEndpoint() {
+		return cloudautomationProviderEndpoint;
 	}
 
 	/**
@@ -243,11 +243,11 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEndpoint(String newEndpoint) {
-		String oldEndpoint = endpoint;
-		endpoint = newEndpoint;
+	public void setCloudautomationProviderEndpoint(String newCloudautomationProviderEndpoint) {
+		String oldCloudautomationProviderEndpoint = cloudautomationProviderEndpoint;
+		cloudautomationProviderEndpoint = newCloudautomationProviderEndpoint;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__ENDPOINT, oldEndpoint, endpoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT, oldCloudautomationProviderEndpoint, cloudautomationProviderEndpoint));
 	}
 
 	/**
@@ -306,14 +306,14 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudautomationPackage.PROVIDER__USERNAME:
-				return getUsername();
-			case CloudautomationPackage.PROVIDER__TYPE:
-				return getType();
-			case CloudautomationPackage.PROVIDER__PASSWORD:
-				return getPassword();
-			case CloudautomationPackage.PROVIDER__ENDPOINT:
-				return getEndpoint();
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME:
+				return getCloudautomationProviderUsername();
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE:
+				return getCloudautomationProviderType();
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD:
+				return getCloudautomationProviderPassword();
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT:
+				return getCloudautomationProviderEndpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -326,17 +326,17 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudautomationPackage.PROVIDER__USERNAME:
-				setUsername((String)newValue);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME:
+				setCloudautomationProviderUsername((String)newValue);
 				return;
-			case CloudautomationPackage.PROVIDER__TYPE:
-				setType((String)newValue);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE:
+				setCloudautomationProviderType((String)newValue);
 				return;
-			case CloudautomationPackage.PROVIDER__PASSWORD:
-				setPassword((String)newValue);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD:
+				setCloudautomationProviderPassword((String)newValue);
 				return;
-			case CloudautomationPackage.PROVIDER__ENDPOINT:
-				setEndpoint((String)newValue);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT:
+				setCloudautomationProviderEndpoint((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,17 +350,17 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.PROVIDER__USERNAME:
-				setUsername(USERNAME_EDEFAULT);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME:
+				setCloudautomationProviderUsername(CLOUDAUTOMATION_PROVIDER_USERNAME_EDEFAULT);
 				return;
-			case CloudautomationPackage.PROVIDER__TYPE:
-				setType(TYPE_EDEFAULT);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE:
+				setCloudautomationProviderType(CLOUDAUTOMATION_PROVIDER_TYPE_EDEFAULT);
 				return;
-			case CloudautomationPackage.PROVIDER__PASSWORD:
-				setPassword(PASSWORD_EDEFAULT);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD:
+				setCloudautomationProviderPassword(CLOUDAUTOMATION_PROVIDER_PASSWORD_EDEFAULT);
 				return;
-			case CloudautomationPackage.PROVIDER__ENDPOINT:
-				setEndpoint(ENDPOINT_EDEFAULT);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT:
+				setCloudautomationProviderEndpoint(CLOUDAUTOMATION_PROVIDER_ENDPOINT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -374,14 +374,14 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudautomationPackage.PROVIDER__USERNAME:
-				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
-			case CloudautomationPackage.PROVIDER__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case CloudautomationPackage.PROVIDER__PASSWORD:
-				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case CloudautomationPackage.PROVIDER__ENDPOINT:
-				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME:
+				return CLOUDAUTOMATION_PROVIDER_USERNAME_EDEFAULT == null ? cloudautomationProviderUsername != null : !CLOUDAUTOMATION_PROVIDER_USERNAME_EDEFAULT.equals(cloudautomationProviderUsername);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE:
+				return CLOUDAUTOMATION_PROVIDER_TYPE_EDEFAULT == null ? cloudautomationProviderType != null : !CLOUDAUTOMATION_PROVIDER_TYPE_EDEFAULT.equals(cloudautomationProviderType);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD:
+				return CLOUDAUTOMATION_PROVIDER_PASSWORD_EDEFAULT == null ? cloudautomationProviderPassword != null : !CLOUDAUTOMATION_PROVIDER_PASSWORD_EDEFAULT.equals(cloudautomationProviderPassword);
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT:
+				return CLOUDAUTOMATION_PROVIDER_ENDPOINT_EDEFAULT == null ? cloudautomationProviderEndpoint != null : !CLOUDAUTOMATION_PROVIDER_ENDPOINT_EDEFAULT.equals(cloudautomationProviderEndpoint);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -411,14 +411,14 @@ public class ProviderImpl extends MixinBaseImpl implements Provider {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (username: ");
-		result.append(username);
-		result.append(", type: ");
-		result.append(type);
-		result.append(", password: ");
-		result.append(password);
-		result.append(", endpoint: ");
-		result.append(endpoint);
+		result.append(" (cloudautomationProviderUsername: ");
+		result.append(cloudautomationProviderUsername);
+		result.append(", cloudautomationProviderType: ");
+		result.append(cloudautomationProviderType);
+		result.append(", cloudautomationProviderPassword: ");
+		result.append(cloudautomationProviderPassword);
+		result.append(", cloudautomationProviderEndpoint: ");
+		result.append(cloudautomationProviderEndpoint);
 		result.append(')');
 		return result.toString();
 	}

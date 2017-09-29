@@ -59,28 +59,28 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUsernamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addPasswordPropertyDescriptor(object);
-			addEndpointPropertyDescriptor(object);
+			addCloudautomationProviderUsernamePropertyDescriptor(object);
+			addCloudautomationProviderTypePropertyDescriptor(object);
+			addCloudautomationProviderPasswordPropertyDescriptor(object);
+			addCloudautomationProviderEndpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Username feature.
+	 * This adds a property descriptor for the Cloudautomation Provider Username feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsernamePropertyDescriptor(Object object) {
+	protected void addCloudautomationProviderUsernamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Provider_username_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_username_feature", "_UI_Provider_type"),
-				 CloudautomationPackage.Literals.PROVIDER__USERNAME,
+				 getString("_UI_Provider_cloudautomationProviderUsername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_cloudautomationProviderUsername_feature", "_UI_Provider_type"),
+				 CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME,
 				 true,
 				 false,
 				 false,
@@ -90,19 +90,19 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Cloudautomation Provider Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addCloudautomationProviderTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Provider_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_type_feature", "_UI_Provider_type"),
-				 CloudautomationPackage.Literals.PROVIDER__TYPE,
+				 getString("_UI_Provider_cloudautomationProviderType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_cloudautomationProviderType_feature", "_UI_Provider_type"),
+				 CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE,
 				 true,
 				 false,
 				 false,
@@ -112,19 +112,19 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Password feature.
+	 * This adds a property descriptor for the Cloudautomation Provider Password feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPasswordPropertyDescriptor(Object object) {
+	protected void addCloudautomationProviderPasswordPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Provider_password_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_password_feature", "_UI_Provider_type"),
-				 CloudautomationPackage.Literals.PROVIDER__PASSWORD,
+				 getString("_UI_Provider_cloudautomationProviderPassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_cloudautomationProviderPassword_feature", "_UI_Provider_type"),
+				 CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -134,19 +134,19 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Endpoint feature.
+	 * This adds a property descriptor for the Cloudautomation Provider Endpoint feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEndpointPropertyDescriptor(Object object) {
+	protected void addCloudautomationProviderEndpointPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Provider_endpoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_endpoint_feature", "_UI_Provider_type"),
-				 CloudautomationPackage.Literals.PROVIDER__ENDPOINT,
+				 getString("_UI_Provider_cloudautomationProviderEndpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Provider_cloudautomationProviderEndpoint_feature", "_UI_Provider_type"),
+				 CloudautomationPackage.Literals.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT,
 				 true,
 				 false,
 				 false,
@@ -174,7 +174,7 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Provider)object).getUsername();
+		String label = ((Provider)object).getCloudautomationProviderUsername();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Provider_type") :
 			getString("_UI_Provider_type") + " " + label;
@@ -193,10 +193,10 @@ public class ProviderItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Provider.class)) {
-			case CloudautomationPackage.PROVIDER__USERNAME:
-			case CloudautomationPackage.PROVIDER__TYPE:
-			case CloudautomationPackage.PROVIDER__PASSWORD:
-			case CloudautomationPackage.PROVIDER__ENDPOINT:
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_USERNAME:
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_TYPE:
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_PASSWORD:
+			case CloudautomationPackage.PROVIDER__CLOUDAUTOMATION_PROVIDER_ENDPOINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

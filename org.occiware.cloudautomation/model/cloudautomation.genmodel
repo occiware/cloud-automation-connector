@@ -18,34 +18,34 @@
     <genClasses>
       <ecoreClass href="cloudautomation.ecore#//Provider"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/username"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/cloudautomationProviderUsername"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/type"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/cloudautomationProviderType"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/password"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/cloudautomationProviderPassword"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/endpoint"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Provider/cloudautomationProviderEndpoint"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="cloudautomation.ecore#//Credentials"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/password"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/cloudautomationCredentialsPassword"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/username"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/cloudautomationCredentialsUsername"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/cloudautomationEndpoint"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Credentials/cloudautomationCredentialsEndpoint"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="cloudautomation.ecore#//Instancetemplate"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Instancetemplate/imageName"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudautomation.ecore#//Instancetemplate/cloudautomationInstancetemplateImageName"/>
       </genFeatures>
     </genClasses>
   </genPackages>

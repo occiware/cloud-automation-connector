@@ -13,32 +13,32 @@
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
   </kinds>
   <mixins name="Provider" scheme="http://org.occiware.cloudautomation#" applies="//@kinds[term='cloudautomationnetwork'] //@kinds[term='cloudautomationinstance']">
-    <attributes name="username" mutable="true" required="true">
+    <attributes name="cloudautomation.provider.username" mutable="true" required="true" description="the username to connect to the provider&#xA;">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="type" mutable="true" required="true">
+    <attributes name="cloudautomation.provider.type" mutable="true" required="true" description="the type of infrastructure used">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="password" mutable="true" required="true">
+    <attributes name="cloudautomation.provider.password" mutable="true" required="true" description="the password to connect to the provider">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="endpoint" mutable="true" required="true">
+    <attributes name="cloudautomation.provider.endpoint" mutable="true" required="true" description="the provider platform url">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>
   <mixins name="Credentials" scheme="http://org.occiware.cloudautomation#" applies="//@kinds[term='cloudautomationstorage'] //@kinds[term='cloudautomationinstance'] //@kinds[term='cloudautomationnetwork']">
-    <attributes name="password" mutable="true" required="true">
+    <attributes name="cloudautomation.credentials.password" mutable="true" required="true" description="the user password on cloud automation">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="username" mutable="true" required="true">
+    <attributes name="cloudautomation.credentials.username" mutable="true" required="true" description="the user username on cloudautomation">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="cloudautomationEndpoint" mutable="true" default="localhost:8080">
+    <attributes name="cloudautomation.credentials.endpoint" mutable="true" default="localhost:8080" description="cloud automation url">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>
   <mixins name="InstanceTemplate" scheme="http://org.occiware.cloudautomation#" applies="//@kinds[term='cloudautomationinstance']">
-    <attributes name="imageName" mutable="false" required="true">
+    <attributes name="cloudautomation.instancetemplate.imageName" mutable="false" required="true" description="the id of the image that will be deployed">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>
