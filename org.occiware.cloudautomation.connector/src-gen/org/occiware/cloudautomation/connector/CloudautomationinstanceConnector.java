@@ -16,9 +16,13 @@ package org.occiware.cloudautomation.connector;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Properties;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.crtp.Large;
@@ -151,18 +155,6 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	// Cloudautomationinstance actions.
 	//
 
-	/*public ProviderConnector getMixinSshUserData() {
-		List<MixinBase> mixinBase = this.getParts();
-		ProviderConnector userData = null;
-		for (MixinBase mixinB : mixinBase) {
-			if (mixinB instanceof ProviderConnector) {
-				userData = (ProviderConnector) mixinB;
-				break;
-			}
-		}
-		return userData;
-	}*/
-
     /**
      * Get the mixin base instance tClass to apply on
      * instance.
@@ -199,7 +191,5 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
     private String getServiceInstancesUrl(){
         return RequestUtils.readServerEndpoint()+"/cloud-automation-service/serviceInstances";
     }
-
-
 
 }	

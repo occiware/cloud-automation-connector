@@ -1,5 +1,7 @@
 package org.occiware.cloudautomation.connector;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -20,7 +22,15 @@ public class RequestUtils {
     }
 
     public static String readServerEndpoint(){
-        return new Properties().getProperty("server.endpoint");
+        Properties prop = new Properties();
+        try (InputStream input = RequestUtils.class.getClassLoader().getResourceAsStream("resources/config.properties")){
+            prop.load(input);
+            return prop.getProperty("server.endpoint");
+
+        } catch (IOException ex) {
+            LOGGER.error("Unable to get the cloud automation service url from config.properties", ex);
+        }
+        return "localhost:8080";
     }
 
     public static boolean postRequestWithSessionId(RequestSpecification request, String url, CredentialsConnector creds){
