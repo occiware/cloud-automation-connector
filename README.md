@@ -6,10 +6,12 @@ The purpose of the software is to support OCCI request in order to manage infras
 
 ## Build and run
 
+In order to use Cloud Automation, the Cloud Automation must be deployed on a server and the service domain name must be specified in /org.occiware.cloudautomation.connector/src-gen/resources/config.properties.
+
 To build the software you need to have maven installed. Then run the following command :
 
 ```maven
-mvn clean install
+mvn clean install -DskipTests
 ```
 
 The software was designed to run as a plugin inside [Mart-Server](https://github.com/occiware/MartServer).
@@ -28,6 +30,42 @@ To use the plugins indside Mart Server follow the steps below :
 ```
 
 3. Then follow the [MartServer administration guide](https://github.com/occiware/MartServer/blob/master/doc/server.md) to run MartServer.
+
+## Examples
+
+### Create an instance
+
+```
+curl -v -X PUT -d '{
+    "title": "instanceName",
+    "summary": "creation instance example",
+    "kind": "http://org.occiware.cloudautomation#cloudautomationinstance",
+    "mixins": ["http://org.occiware.cloudautomation#provider",
+    "http://org.occiware.cloudautomation#credentials",
+    "http://org.occiware.cloudautomation#instancetemplate"],
+    "attributes": {
+        "cloudautomation.instancetemplate.imageName":"imageId",
+	"cloudautomation.provider.username": "toto",
+	"cloudautomation.provider.password": "tutu",
+	"cloudautomation.provider.type":"openstack-nova",
+	"cloudautomation.provider.endpoint":"localhost:8081",
+	"cloudautomation.credentials.username":"user",
+	"cloudautomation.credentials.password":"pwd"
+    }
+}' http://localhost:8080/mycompute -H "Content-Type: application/json" -H "accept: application/json"
+```
+
+### Get an instance
+
+```
+curl -v -X GET http://localhost:8080/mycompute -H "accept: application/json"
+```
+
+### Delete an instance
+
+```
+curl -v -X DELETE -H 'accept: application/json' http://localhost:8080/mycompute
+```
 
 ## License
 
