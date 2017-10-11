@@ -16,23 +16,23 @@ package org.occiware.cloudautomation.connector;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.crtp.Large;
 import org.eclipse.cmf.occi.crtp.Medium;
 import org.eclipse.cmf.occi.crtp.Small;
+import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.restassured.http.ContentType;
 
 /**
  * Connector implementation for the OCCI kind:
@@ -46,6 +46,7 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(CloudautomationinstanceConnector.class);
+    private String pcaId;
 
 	// Start of user code Cloudautomationinstanceconnector_constructor
 	/**
@@ -69,22 +70,18 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 
-		Optional<ProviderConnector> test = getMixin(ProviderConnector.class);
-		System.out.println("test "+test);
+        //Gather the mixin implied in the instance creation
 
-		ProviderConnector provider = getMixin(ProviderConnector.class)
-                .orElseThrow(() -> new MissingParametersException("Provider mixin was not associated to the instance"));
+		ProviderConnector provider = getProviderConnector();
+        CredentialsConnector creds = getCredentialsConnector();
 
-
-        CredentialsConnector creds = getMixin(CredentialsConnector.class)
-                .orElseThrow(() -> new MissingParametersException("Credentials mixin was not associated to the instance"));
-
-        InstancetemplateConnector image = getMixin(InstancetemplateConnector.class)
+        InstancetemplateConnector image = MixinUtils.getMixin(this.getParts(),InstancetemplateConnector.class)
                 .orElseThrow(() -> new MissingParametersException("Instancetemplate mixin was not associated to the instance"));
 
+        Optional<Resource_tpl> optionalResourceTpl = MixinUtils.getMixin(this.getParts(),getResourceTplList());
+        Optional<User_data> optionalUserData = MixinUtils.getMixin(this.getParts(),User_data.class);
 
-        Optional<Resource_tpl> optionalResourceTpl = getMixin(getResourceTplList());
-        Optional<User_data> optionalUserData = getMixin(User_data.class);
+        // Create the json that will be used in the request body
 
 	    JSONObject content = new JSONObject();
         JSONObject genericInfo = new JSONObject();
@@ -107,10 +104,28 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
         content.put("genericInfo",genericInfo);
         content.put("variables",variables);
 
-        if(RequestUtils.postRequestWithSessionId(given().body(content.toJSONString()),getServiceInstancesUrl(),creds)){
-            throw new ConnectionFailedException("Unable to create the instance "+title);
-        }
+        //send the request to cloud automation
 
+        LOGGER.info("POST request in order to create the instance ");
+        Optional<String> optionalResponse = RequestUtils.postRequestWithSessionId(
+                given().contentType(ContentType.JSON)
+                        .body(content.toJSONString()),
+                getServiceInstancesUrl(),
+                creds);
+
+
+        JSONObject response = (JSONObject) JSONValue.parse(optionalResponse
+                .orElseThrow(() -> new ConnectionFailedException("Unable to create the instance "+title)));
+
+
+        //Update the information following the request response
+
+        LOGGER.info("response : \n"+response );
+
+        JSONObject responseVariables = (JSONObject) response.get("variables");
+        this.setOcciComputeState(openstackToComputeStatus((String) responseVariables.get("status")));
+        pcaId = (String) responseVariables.get("pca.instance.id");
+        LOGGER.info("set pcaID value to :"+pcaId);
 	}
 
 	// End of user code
@@ -123,8 +138,28 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// TODO: Implement this callback or remove this method.
-	}
+
+        CredentialsConnector creds = getCredentialsConnector();
+
+
+        LOGGER.info("GET request in order to get the instance information");
+        Optional<String> optionalResponse = RequestUtils.getRequestWithSessionId(
+                given().contentType(ContentType.JSON),
+                getServiceInstancesUrl(),
+                creds);
+
+        JSONObject response = (JSONObject) JSONValue.parse(optionalResponse
+                .orElseThrow(() -> new ConnectionFailedException("Unable to get the instance "+title)));
+
+        LOGGER.info("response : \n"+response );
+        LOGGER.info("GET pca id information : "+pcaId);
+
+        JSONObject responseVariables = (JSONObject) ((JSONObject) response.get(pcaId)).get("variables");
+        this.setOcciComputeState(openstackToComputeStatus((String) responseVariables.get("status")));
+        Optional.ofNullable(responseVariables.get("endpoint"))
+                .ifPresent(endpoint -> this.setOcciComputeHostname((String) endpoint));
+
+    }
 	// End of user code
 
 	// Start of user code Cloudautomationinstance_occiUpdate_method
@@ -148,37 +183,42 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 	{
 		LOGGER.debug("occiDelete() called on " + this);
 		// TODO: Implement this callback or remove this method.
-	}
+
+        CredentialsConnector creds = getCredentialsConnector();
+
+        JSONObject content = new JSONObject();
+        JSONObject genericInfo = new JSONObject();
+        JSONObject variables = new JSONObject();
+
+        genericInfo.put("pca.service.model","occi.infrastructure.compute");
+        genericInfo.put("pca.service.type","infrastructure");
+        genericInfo.put("pca.action.type","delete");
+
+        ProviderConnector provider = getProviderConnector();
+
+        variables.put("infraName",provider.getEntity().getTitle());
+        variables.put("pca.instance.id",this.getTitle());
+
+        content.put("genericInfo",genericInfo);
+        content.put("variables",variables);
+
+
+        LOGGER.info("DELETE request in order to delete the instance ");
+        Optional<String> optionalResponse = RequestUtils.deleteRequestWithSessionId(
+                given().contentType(ContentType.JSON)
+                        .body(content.toJSONString()),
+                getServiceInstancesUrl(),
+                creds);
+
+        optionalResponse.orElseThrow( () -> new RuntimeException("Failed to delete instance "+this.getTitle()));
+
+
+    }
 	// End of user code
 
 	//
 	// Cloudautomationinstance actions.
 	//
-
-    /**
-     * Get the mixin base instance tClass to apply on
-     * instance.
-     */
-    public <T extends MixinBase> Optional<T> getMixin(Class<T> tClass){
-		List<MixinBase> mixinBase = this.getParts();
-		return mixinBase.stream()
-				.filter(mixinB -> tClass.isInstance(mixinB))
-				.findFirst()
-				.map(mixin -> (T) mixin);
-    }
-
-    /**
-     * Get the mixin base instance tClass to apply on
-     * instance.
-     */
-    public <T extends MixinBase> Optional<T> getMixin(List<Class<T>> tClasses){
-        List<MixinBase> mixinBases = this.getParts();
-        return mixinBases.stream()
-                .filter(mixinB -> tClasses.stream()
-                        .anyMatch(tClass -> tClass.isInstance(mixinB)))
-                .findFirst()
-				.map(mixin -> (T) mixin);
-	}
 
     private <T extends MixinBase> List<Class<T>> getResourceTplList(){
         List<Class<T>> resourceTplList = new ArrayList<>();
@@ -190,6 +230,29 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 
     private String getServiceInstancesUrl(){
         return RequestUtils.readServerEndpoint()+"/cloud-automation-service/serviceInstances";
+    }
+
+    private ComputeStatus openstackToComputeStatus(String openstackStatus){
+		LOGGER.info("openstack status : "+openstackStatus);
+        switch (openstackStatus){
+            case "BUILD":
+            case "DEPLOYING":
+                return ComputeStatus.INACTIVE;
+            case "RUNNING":
+                return ComputeStatus.ACTIVE;
+            default:
+                return ComputeStatus.ERROR;
+        }
+    }
+
+    private CredentialsConnector getCredentialsConnector(){
+        return MixinUtils.getMixin(this.getParts(),CredentialsConnector.class)
+                .orElseThrow(() -> new MissingParametersException("Credentials mixin was not associated to the instance"));
+    }
+
+    private ProviderConnector getProviderConnector(){
+        return MixinUtils.getMixin(this.getParts(),ProviderConnector.class)
+                .orElseThrow(() -> new MissingParametersException("Provider mixin was not associated to the instance"));
     }
 
 }	

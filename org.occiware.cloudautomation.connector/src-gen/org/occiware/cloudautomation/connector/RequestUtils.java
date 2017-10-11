@@ -2,6 +2,7 @@ package org.occiware.cloudautomation.connector;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -33,22 +34,79 @@ public class RequestUtils {
         return "localhost:8080";
     }
 
-    public static boolean postRequestWithSessionId(RequestSpecification request, String url, CredentialsConnector creds){
-        if(! responseIs2xx(postRequest(request,url,creds))){
-            LOGGER.info("session id expired, renewing a new one");
+    public static Optional<String> getRequestWithSessionId(RequestSpecification request, String url ,CredentialsConnector creds){
+        if(creds.getSessionid() == null){
             creds.refreshSessionId();
-            Response response = postRequest(request,url,creds);
+        }
+        Response response = getRequest(request,url,creds);
+        if(! responseIs2xx(response)){
+            LOGGER.info("Session id expired, renewing a new one");
+            creds.refreshSessionId();
+            response = getRequest(request,url,creds);
+            LOGGER.info("POST with session id renewed");
             if(! responseIs2xx(response)){
-                LOGGER.error(response.asString());
-                return false;
+                LOGGER.error("Post request failed : \n"+response.asString());
+                return Optional.empty();
             }
         }
-        return true;
+        return Optional.of(response.asString());
+    }
+
+    public static Optional<String> postRequestWithSessionId(RequestSpecification request, String url, CredentialsConnector creds){
+        if (creds.getSessionid() == null){
+            creds.refreshSessionId();
+        }
+        Response response = postRequest(request,url,creds);
+        if(! responseIs2xx(response)){
+            LOGGER.info("Session id expired, renewing a new one");
+            creds.refreshSessionId();
+            response = postRequest(request,url,creds);
+            LOGGER.info("POST with session id renewed");
+            if(! responseIs2xx(response)){
+                LOGGER.error("Post request failed : \n"+response.asString());
+                return Optional.empty();
+            }
+        }
+        return Optional.of(response.asString());
+    }
+
+    public static Optional<String> deleteRequestWithSessionId(RequestSpecification request, String url, CredentialsConnector creds){
+        if(creds.getSessionid()==null){
+            creds.refreshSessionId();
+        }
+        Response response = deleteRequest(request,url,creds);
+        if(! responseIs2xx(response)){
+            LOGGER.info("Session id expired, renewing a new one");
+            creds.refreshSessionId();
+            response = deleteRequest(request,url,creds);
+            LOGGER.info("POST with session id renewed");
+            if(! responseIs2xx(response)){
+                LOGGER.error("Post request failed : \n"+response.asString());
+                return Optional.empty();
+            }
+        }
+        return Optional.of(response.asString());
+    }
+
+    private static Response getRequest(RequestSpecification request, String url, CredentialsConnector creds){
+        return request.header("sessionid", creds.getSessionid())
+                .get(url)
+                .then()
+                .extract()
+                .response();
     }
 
     private static Response postRequest(RequestSpecification request, String url, CredentialsConnector creds){
-        return request.header("sessionid",creds.getSessionid())
+        return request.header("sessionid", creds.getSessionid())
                 .post(url)
+                .then()
+                .extract()
+                .response();
+    }
+
+    private static Response deleteRequest(RequestSpecification request, String url, CredentialsConnector creds) {
+        return request.header("sessionid", creds.getSessionid())
+                .delete(url)
                 .then()
                 .extract()
                 .response();

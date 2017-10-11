@@ -19,6 +19,7 @@ import static io.restassured.RestAssured.given;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 /**
@@ -42,33 +43,29 @@ public class CredentialsConnector extends org.occiware.cloudautomation.impl.Cred
 	/**
 	 * Constructs a credentials connector.
 	 */
-	CredentialsConnector()
-	{
-            sessionid = requestSessionId();
-	}
-
-	public void refreshSessionId(){
-        sessionid = requestSessionId();
-    }
+	CredentialsConnector() {}
 
     public String getSessionid(){
 	    return sessionid;
     }
 
-	private String requestSessionId(){
+	public void refreshSessionId(){
         LOGGER.info("Try to get the sessionid from : "+getUrl());
-        String bodyContent = "username="+cloudautomationCredentialsUsername+"&password="+cloudautomationCredentialsPassword;
-        Response response = given().body(bodyContent)
+
+        String bodyContent = "username="+getCloudautomationCredentialsUsername()+"&password="+getCloudautomationCredentialsPassword();
+        Response response = given()
+                .contentType(ContentType.URLENC)
+                .body(bodyContent)
                 .when()
                 .post(getUrl())
                 .then()
                 .extract()
                 .response();
         if(! RequestUtils.responseIs2xx(response)){
-            LOGGER.info("Failed to get the sessionid from cloudautomation");
+            LOGGER.error("Failed to get the sessionid from cloudautomation : \n"+response.asString());
             throw new ConnectionFailedException("Failed to get the session id");
         }
-        return response.asString();
+        sessionid = response.asString();
     }
 
     private String getUrl(){
