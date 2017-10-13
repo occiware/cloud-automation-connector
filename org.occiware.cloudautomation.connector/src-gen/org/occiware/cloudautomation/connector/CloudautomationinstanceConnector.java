@@ -26,6 +26,7 @@ import org.eclipse.cmf.occi.crtp.Medium;
 import org.eclipse.cmf.occi.crtp.Small;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
+import org.eclipse.cmf.occi.infrastructure.Ssh_key;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -80,6 +81,7 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 
         Optional<Resource_tpl> optionalResourceTpl = MixinUtils.getMixin(this.getParts(),getResourceTplList());
         Optional<User_data> optionalUserData = MixinUtils.getMixin(this.getParts(),User_data.class);
+        Optional<Ssh_key> optionalSshKey = MixinUtils.getMixin(this.getParts(), Ssh_key.class);
 
         // Create the json that will be used in the request body
 
@@ -91,22 +93,27 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
         genericInfo.put("pca.service.type","infrastructure");
         genericInfo.put("pca.action.type","create");
 
-	    variables.put("infraName",provider.getEntity().getTitle());
+	    variables.put("infraName",provider.getCloudautomationProviderEndpoint().replaceAll("/","").replaceAll(":",""));
 	    variables.put("infraType",provider.getCloudautomationProviderType());
 	    variables.put("infraEndpoint",provider.getCloudautomationProviderEndpoint());
-        variables.put("instanceName",this.getTitle());
+        variables.put("userName",provider.getCloudautomationProviderUsername());
+        variables.put("userPwd",provider.getCloudautomationProviderPassword());
+        variables.put("pca.instance.id",this.getTitle());
         variables.put("architecture",this.getOcciComputeArchitecture().getName());
         variables.put("imageName",image.getCloudautomationInstancetemplateImageName());
 
-	    optionalResourceTpl.ifPresent(resourceTpl -> variables.put("size",resourceTpl.getEntity().getTitle()));
-        optionalUserData.ifPresent(userData -> variables.put("userdata",userData.getEntity().getTitle()));
+
+	    optionalResourceTpl.ifPresent(resourceTpl -> LOGGER.info("Size is not supported yet"));
+        optionalUserData.ifPresent(userData -> variables.put("userdata",userData.getOcciComputeUserdata()));
+        optionalSshKey.ifPresent(sshKey -> variables.put("sshKey",sshKey.getOcciCredentialsSshPublickey()));
+        if( ! optionalSshKey.isPresent()) ;
 
         content.put("genericInfo",genericInfo);
         content.put("variables",variables);
 
         //send the request to cloud automation
 
-        LOGGER.info("POST request in order to create the instance ");
+        LOGGER.info("POST request in order to create the instance :\n"+content.toJSONString());
         Optional<String> optionalResponse = RequestUtils.postRequestWithSessionId(
                 given().contentType(ContentType.JSON)
                         .body(content.toJSONString()),
@@ -151,9 +158,6 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
         JSONObject response = (JSONObject) JSONValue.parse(optionalResponse
                 .orElseThrow(() -> new ConnectionFailedException("Unable to get the instance "+title)));
 
-        LOGGER.info("response : \n"+response );
-        LOGGER.info("GET pca id information : "+pcaId);
-
         JSONObject responseVariables = (JSONObject) ((JSONObject) response.get(pcaId)).get("variables");
         this.setOcciComputeState(openstackToComputeStatus((String) responseVariables.get("status")));
         Optional.ofNullable(responseVariables.get("endpoint"))
@@ -196,7 +200,7 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 
         ProviderConnector provider = getProviderConnector();
 
-        variables.put("infraName",provider.getEntity().getTitle());
+        variables.put("infraName",provider.getCloudautomationProviderEndpoint().replaceAll("/","").replaceAll(":",""));
         variables.put("pca.instance.id",this.getTitle());
 
         content.put("genericInfo",genericInfo);
@@ -204,6 +208,7 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 
 
         LOGGER.info("DELETE request in order to delete the instance ");
+        LOGGER.info("delete request \n : "+content.toJSONString());
         Optional<String> optionalResponse = RequestUtils.deleteRequestWithSessionId(
                 given().contentType(ContentType.JSON)
                         .body(content.toJSONString()),

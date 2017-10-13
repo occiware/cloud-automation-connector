@@ -75,13 +75,16 @@ public class RequestUtils {
             creds.refreshSessionId();
         }
         Response response = deleteRequest(request,url,creds);
+        LOGGER.info("delete response : \n"+ response.asString());
+        LOGGER.info("delete status line : \n"+ response.getStatusLine());
+
         if(! responseIs2xx(response)){
             LOGGER.info("Session id expired, renewing a new one");
             creds.refreshSessionId();
             response = deleteRequest(request,url,creds);
             LOGGER.info("POST with session id renewed");
             if(! responseIs2xx(response)){
-                LOGGER.error("Post request failed : \n"+response.asString());
+                LOGGER.error("Delete request failed : \n"+response.asString());
                 return Optional.empty();
             }
         }
