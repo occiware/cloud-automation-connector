@@ -42,7 +42,9 @@ curl -v -X PUT -d '{
     "kind": "http://org.occiware.cloudautomation#cloudautomationinstance",
     "mixins": ["http://org.occiware.cloudautomation#provider",
     "http://org.occiware.cloudautomation#credentials",
-    "http://org.occiware.cloudautomation#instancetemplate"],
+    "http://org.occiware.cloudautomation#instancetemplate",
+    "http://schemas.ogf.org/occi/infrastructure/credentials#ssh_key",
+    "http://schemas.ogf.org/occi/infrastructure/compute#user_data"],
     "attributes": {
         "cloudautomation.instancetemplate.imageName":"imageId",
 	"cloudautomation.provider.username": "toto",
@@ -50,7 +52,9 @@ curl -v -X PUT -d '{
 	"cloudautomation.provider.type":"openstack-nova",
 	"cloudautomation.provider.endpoint":"localhost:8081",
 	"cloudautomation.credentials.username":"user",
-	"cloudautomation.credentials.password":"pwd"
+	"cloudautomation.credentials.password":"pwd",
+	"occi.credentials.ssh.publickey":"myPublicKey",
+	"occi.compute.userdata":"mkdir /tmp/testDirectoryCreation"
     }
 }' http://localhost:8080/mycompute -H "Content-Type: application/json" -H "accept: application/json"
 ```
