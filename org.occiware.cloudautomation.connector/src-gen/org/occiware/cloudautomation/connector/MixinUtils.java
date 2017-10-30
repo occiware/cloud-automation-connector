@@ -9,10 +9,9 @@ import org.eclipse.emf.common.util.EList;
 public class MixinUtils {
 
     /**
-     * Get the mixin base instance tClass to apply on
-     * instance.
+     * Get the mixin base instance tClass to apply on instance.
      */
-    public static <T extends MixinBase> Optional<T> getMixin(EList<MixinBase> mixins, Class<T> tClass){
+    public static <T extends MixinBase> Optional<T> getMixinBase(EList<MixinBase> mixins, Class<T> tClass){
         List<MixinBase> mixinBase = mixins;
         return mixinBase.stream()
                 .filter(mixinB -> tClass.isInstance(mixinB))
@@ -24,7 +23,7 @@ public class MixinUtils {
      * Get the mixin base instance tClass to apply on
      * instance.
      */
-    public static <T extends MixinBase> Optional<T> getMixin(EList<MixinBase> mixins, List<Class<T>> tClasses){
+    public static <T extends MixinBase> Optional<T> getMixinBase(EList<MixinBase> mixins, List<Class<T>> tClasses){
         List<MixinBase> mixinBases = mixins;
         return mixinBases.stream()
                 .filter(mixinB -> tClasses.stream()
@@ -32,4 +31,5 @@ public class MixinUtils {
                 .findFirst()
                 .map(mixin -> (T) mixin);
     }
+
 }

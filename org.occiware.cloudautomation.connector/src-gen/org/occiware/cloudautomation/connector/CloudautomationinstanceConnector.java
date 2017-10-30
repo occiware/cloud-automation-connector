@@ -76,14 +76,12 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
 		ProviderConnector provider = getProviderConnector();
         CredentialsConnector creds = getCredentialsConnector();
 
-        InstancetemplateConnector image = MixinUtils.getMixin(this.getParts(),InstancetemplateConnector.class)
+        InstancetemplateConnector image = MixinUtils.getMixinBase(this.getParts(),InstancetemplateConnector.class)
                 .orElseThrow(() -> new MissingParametersException("Instancetemplate mixin was not associated to the instance"));
 
-        Optional<Resource_tpl> optionalResourceTpl = MixinUtils.getMixin(this.getParts(),getResourceTplList());
-        Optional<User_data> optionalUserData = MixinUtils.getMixin(this.getParts(),User_data.class);
-        Optional<Ssh_key> optionalSshKey = MixinUtils.getMixin(this.getParts(), Ssh_key.class);
-
-        // Create the json that will be used in the request body
+        Optional<Resource_tpl> optionalResourceTpl = MixinUtils.getMixinBase(this.getParts(),getResourceTplList());
+        Optional<User_data> optionalUserData = MixinUtils.getMixinBase(this.getParts(),User_data.class);
+        Optional<Ssh_key> optionalSshKey = MixinUtils.getMixinBase(this.getParts(), Ssh_key.class);
 
 	    JSONObject content = new JSONObject();
         JSONObject genericInfo = new JSONObject();
@@ -251,12 +249,12 @@ public class CloudautomationinstanceConnector extends org.occiware.cloudautomati
     }
 
     private CredentialsConnector getCredentialsConnector(){
-        return MixinUtils.getMixin(this.getParts(),CredentialsConnector.class)
+        return MixinUtils.getMixinBase(this.getParts(),CredentialsConnector.class)
                 .orElseThrow(() -> new MissingParametersException("Credentials mixin was not associated to the instance"));
     }
 
     private ProviderConnector getProviderConnector(){
-        return MixinUtils.getMixin(this.getParts(),ProviderConnector.class)
+        return MixinUtils.getMixinBase(this.getParts(),ProviderConnector.class)
                 .orElseThrow(() -> new MissingParametersException("Provider mixin was not associated to the instance"));
     }
 
