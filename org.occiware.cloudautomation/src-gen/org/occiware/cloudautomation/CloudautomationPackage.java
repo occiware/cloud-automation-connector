@@ -87,7 +87,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__ID = InfrastructurePackage.NETWORKINTERFACE__ID;
+	int CLOUDAUTOMATIONNETWORK__ID = InfrastructurePackage.NETWORK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__TITLE = InfrastructurePackage.NETWORKINTERFACE__TITLE;
+	int CLOUDAUTOMATIONNETWORK__TITLE = InfrastructurePackage.NETWORK__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -105,7 +105,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__KIND = InfrastructurePackage.NETWORKINTERFACE__KIND;
+	int CLOUDAUTOMATIONNETWORK__KIND = InfrastructurePackage.NETWORK__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__LOCATION = InfrastructurePackage.NETWORKINTERFACE__LOCATION;
+	int CLOUDAUTOMATIONNETWORK__LOCATION = InfrastructurePackage.NETWORK__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -123,7 +123,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__ATTRIBUTES = InfrastructurePackage.NETWORKINTERFACE__ATTRIBUTES;
+	int CLOUDAUTOMATIONNETWORK__ATTRIBUTES = InfrastructurePackage.NETWORK__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -132,7 +132,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__MIXINS = InfrastructurePackage.NETWORKINTERFACE__MIXINS;
+	int CLOUDAUTOMATIONNETWORK__MIXINS = InfrastructurePackage.NETWORK__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -141,61 +141,70 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__PARTS = InfrastructurePackage.NETWORKINTERFACE__PARTS;
+	int CLOUDAUTOMATIONNETWORK__PARTS = InfrastructurePackage.NETWORK__PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__SOURCE = InfrastructurePackage.NETWORKINTERFACE__SOURCE;
+	int CLOUDAUTOMATIONNETWORK__SUMMARY = InfrastructurePackage.NETWORK__SUMMARY;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__TARGET = InfrastructurePackage.NETWORKINTERFACE__TARGET;
+	int CLOUDAUTOMATIONNETWORK__LINKS = InfrastructurePackage.NETWORK__LINKS;
 
 	/**
-	 * The feature id for the '<em><b>Occi Networkinterface Interface</b></em>' attribute.
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORKINTERFACE_INTERFACE = InfrastructurePackage.NETWORKINTERFACE__OCCI_NETWORKINTERFACE_INTERFACE;
+	int CLOUDAUTOMATIONNETWORK__RLINKS = InfrastructurePackage.NETWORK__RLINKS;
 
 	/**
-	 * The feature id for the '<em><b>Occi Networkinterface Mac</b></em>' attribute.
+	 * The feature id for the '<em><b>Occi Network Vlan</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORKINTERFACE_MAC = InfrastructurePackage.NETWORKINTERFACE__OCCI_NETWORKINTERFACE_MAC;
+	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORK_VLAN = InfrastructurePackage.NETWORK__OCCI_NETWORK_VLAN;
 
 	/**
-	 * The feature id for the '<em><b>Occi Networkinterface State</b></em>' attribute.
+	 * The feature id for the '<em><b>Occi Network Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORKINTERFACE_STATE = InfrastructurePackage.NETWORKINTERFACE__OCCI_NETWORKINTERFACE_STATE;
+	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORK_LABEL = InfrastructurePackage.NETWORK__OCCI_NETWORK_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Occi Networkinterface State Message</b></em>' attribute.
+	 * The feature id for the '<em><b>Occi Network State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORKINTERFACE_STATE_MESSAGE = InfrastructurePackage.NETWORKINTERFACE__OCCI_NETWORKINTERFACE_STATE_MESSAGE;
+	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORK_STATE = InfrastructurePackage.NETWORK__OCCI_NETWORK_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Occi Network State Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDAUTOMATIONNETWORK__OCCI_NETWORK_STATE_MESSAGE = InfrastructurePackage.NETWORK__OCCI_NETWORK_STATE_MESSAGE;
 
 	/**
 	 * The number of structural features of the '<em>Cloudautomationnetwork</em>' class.
@@ -204,7 +213,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK_FEATURE_COUNT = InfrastructurePackage.NETWORKINTERFACE_FEATURE_COUNT + 0;
+	int CLOUDAUTOMATIONNETWORK_FEATURE_COUNT = InfrastructurePackage.NETWORK_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -213,7 +222,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK___OCCI_CREATE = InfrastructurePackage.NETWORKINTERFACE___OCCI_CREATE;
+	int CLOUDAUTOMATIONNETWORK___OCCI_CREATE = InfrastructurePackage.NETWORK___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -222,7 +231,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK___OCCI_RETRIEVE = InfrastructurePackage.NETWORKINTERFACE___OCCI_RETRIEVE;
+	int CLOUDAUTOMATIONNETWORK___OCCI_RETRIEVE = InfrastructurePackage.NETWORK___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -231,7 +240,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK___OCCI_UPDATE = InfrastructurePackage.NETWORKINTERFACE___OCCI_UPDATE;
+	int CLOUDAUTOMATIONNETWORK___OCCI_UPDATE = InfrastructurePackage.NETWORK___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -240,7 +249,25 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK___OCCI_DELETE = InfrastructurePackage.NETWORKINTERFACE___OCCI_DELETE;
+	int CLOUDAUTOMATIONNETWORK___OCCI_DELETE = InfrastructurePackage.NETWORK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDAUTOMATIONNETWORK___UP = InfrastructurePackage.NETWORK___UP;
+
+	/**
+	 * The operation id for the '<em>Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDAUTOMATIONNETWORK___DOWN = InfrastructurePackage.NETWORK___DOWN;
 
 	/**
 	 * The number of operations of the '<em>Cloudautomationnetwork</em>' class.
@@ -249,7 +276,7 @@ public interface CloudautomationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDAUTOMATIONNETWORK_OPERATION_COUNT = InfrastructurePackage.NETWORKINTERFACE_OPERATION_COUNT + 0;
+	int CLOUDAUTOMATIONNETWORK_OPERATION_COUNT = InfrastructurePackage.NETWORK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.occiware.cloudautomation.impl.CloudautomationinstanceImpl <em>Cloudautomationinstance</em>}' class.

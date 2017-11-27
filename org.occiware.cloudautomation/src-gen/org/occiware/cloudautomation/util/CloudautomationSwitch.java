@@ -13,12 +13,11 @@
 package org.occiware.cloudautomation.util;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.cmf.occi.infrastructure.Network;
 import org.eclipse.cmf.occi.infrastructure.Storage;
 
 import org.eclipse.emf.ecore.EObject;
@@ -88,8 +87,8 @@ public class CloudautomationSwitch<T> extends Switch<T> {
 			case CloudautomationPackage.CLOUDAUTOMATIONNETWORK: {
 				Cloudautomationnetwork cloudautomationnetwork = (Cloudautomationnetwork)theEObject;
 				T result = caseCloudautomationnetwork(cloudautomationnetwork);
-				if (result == null) result = caseNetworkinterface(cloudautomationnetwork);
-				if (result == null) result = caseLink(cloudautomationnetwork);
+				if (result == null) result = caseNetwork(cloudautomationnetwork);
+				if (result == null) result = caseResource(cloudautomationnetwork);
 				if (result == null) result = caseEntity(cloudautomationnetwork);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -243,36 +242,6 @@ public class CloudautomationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLink(Link object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Networkinterface</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Networkinterface</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNetworkinterface(Networkinterface object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -284,6 +253,21 @@ public class CloudautomationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Network</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Network</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNetwork(Network object) {
 		return null;
 	}
 

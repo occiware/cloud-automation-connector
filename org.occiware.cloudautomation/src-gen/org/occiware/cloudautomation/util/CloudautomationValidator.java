@@ -176,10 +176,8 @@ public class CloudautomationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(cloudautomationnetwork, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(cloudautomationnetwork, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(cloudautomationnetwork, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(cloudautomationnetwork, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(cloudautomationnetwork, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(cloudautomationnetwork, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateNetworkinterface_targetConstraint(cloudautomationnetwork, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(cloudautomationnetwork, diagnostics, context);
+		if (result || diagnostics != null) result &= infrastructureValidator.validateNetwork_UniqueVlan(cloudautomationnetwork, diagnostics, context);
 		return result;
 	}
 

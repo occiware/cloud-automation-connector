@@ -12,7 +12,7 @@
  */
 package org.occiware.cloudautomation;
 
-import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.cmf.occi.infrastructure.Network;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,5 +28,5 @@ import org.eclipse.cmf.occi.infrastructure.Networkinterface;
  * @model
  * @generated
  */
-public interface Cloudautomationnetwork extends Networkinterface {
+public interface Cloudautomationnetwork extends Network {
 } // Cloudautomationnetwork

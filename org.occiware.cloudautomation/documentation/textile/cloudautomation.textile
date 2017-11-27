@@ -1,0 +1,94 @@
+h1. OCCI cloudautomation extension
+
+
+
+| *Name* | cloudautomation |
+| *Scheme* | http://org.occiware.cloudautomation# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="crtp.textile">crtp</a> | http://schemas.ogf.org/occi/infrastructure/compute/template/1.1# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+
+h1. Kinds
+
+h2. Kind cloudautomationnetwork
+
+| *Term* | cloudautomationnetwork |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-network">http://schemas.ogf.org/occi/infrastructure#network</a> |
+
+h2. Kind cloudautomationinstance
+
+| *Term* | cloudautomationinstance |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-compute">http://schemas.ogf.org/occi/infrastructure#compute</a> |
+
+h2. Kind cloudautomationstorage
+
+| *Term* | cloudautomationstorage |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-storage">http://schemas.ogf.org/occi/infrastructure#storage</a> |
+
+
+h1. Mixins
+
+h2. Mixin provider
+
+| *Term* | provider |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+Applies to:
+* <a href="cloudautomation.textile#kind-cloudautomationnetwork">http://org.occiware.cloudautomation#cloudautomationnetwork</a>
+* <a href="cloudautomation.textile#kind-cloudautomationinstance">http://org.occiware.cloudautomation#cloudautomationinstance</a>
+
+Attributes of provider are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| cloudautomation.provider.username | <a href="core.textile#-string">String</a> | true | true |  | the username to connect to the provider
+ |
+| cloudautomation.provider.type | <a href="core.textile#-string">String</a> | true | true |  | the type of infrastructure used |
+| cloudautomation.provider.password | <a href="core.textile#-string">String</a> | true | true |  | the password to connect to the provider |
+| cloudautomation.provider.endpoint | <a href="core.textile#-string">String</a> | true | true |  | the provider platform url |
+
+
+h2. Mixin credentials
+
+| *Term* | credentials |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+Applies to:
+* <a href="cloudautomation.textile#kind-cloudautomationstorage">http://org.occiware.cloudautomation#cloudautomationstorage</a>
+* <a href="cloudautomation.textile#kind-cloudautomationinstance">http://org.occiware.cloudautomation#cloudautomationinstance</a>
+* <a href="cloudautomation.textile#kind-cloudautomationnetwork">http://org.occiware.cloudautomation#cloudautomationnetwork</a>
+
+Attributes of credentials are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| cloudautomation.credentials.password | <a href="core.textile#-string">String</a> | true | true |  | the user password on cloud automation |
+| cloudautomation.credentials.username | <a href="core.textile#-string">String</a> | true | true |  | the user username on cloudautomation |
+| cloudautomation.credentials.endpoint | <a href="core.textile#-string">String</a> | false | true | localhost:8080 | cloud automation url |
+
+
+h2. Mixin instancetemplate
+
+| *Term* | instancetemplate |
+| *Scheme* | http://org.occiware.cloudautomation# |
+| *Title* |  |
+Applies to:
+* <a href="cloudautomation.textile#kind-cloudautomationinstance">http://org.occiware.cloudautomation#cloudautomationinstance</a>
+
+Attributes of instancetemplate are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| cloudautomation.instancetemplate.imageName | <a href="core.textile#-string">String</a> | true | false |  | the id of the image that will be deployed |
+
+
+
+Generated at Mon Nov 27 10:02:19 CET 2017 from platform:/resource/org.occiware.cloudautomation/model/cloudautomation.occie by org.eclipse.cmf.occi.core.gen.textile

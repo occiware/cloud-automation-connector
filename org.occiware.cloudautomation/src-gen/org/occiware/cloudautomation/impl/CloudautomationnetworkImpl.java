@@ -12,7 +12,7 @@
  */
 package org.occiware.cloudautomation.impl;
 
-import org.eclipse.cmf.occi.infrastructure.impl.NetworkinterfaceImpl;
+import org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -26,7 +26,7 @@ import org.occiware.cloudautomation.Cloudautomationnetwork;
  *
  * @generated
  */
-public class CloudautomationnetworkImpl extends NetworkinterfaceImpl implements Cloudautomationnetwork {
+public class CloudautomationnetworkImpl extends NetworkImpl implements Cloudautomationnetwork {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

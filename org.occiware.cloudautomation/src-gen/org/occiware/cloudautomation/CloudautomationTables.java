@@ -151,10 +151,10 @@ public class CloudautomationTables
 
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Cloudautomationnetwork = new ExecutorFragment(Types._Cloudautomationnetwork, CloudautomationTables.Types._Cloudautomationnetwork);
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Entity = new ExecutorFragment(Types._Cloudautomationnetwork, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Link = new ExecutorFragment(Types._Cloudautomationnetwork, OCCITables.Types._Link);
-		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Networkinterface = new ExecutorFragment(Types._Cloudautomationnetwork, InfrastructureTables.Types._Networkinterface);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Network = new ExecutorFragment(Types._Cloudautomationnetwork, InfrastructureTables.Types._Network);
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__OclAny = new ExecutorFragment(Types._Cloudautomationnetwork, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__OclElement = new ExecutorFragment(Types._Cloudautomationnetwork, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationnetwork__Resource = new ExecutorFragment(Types._Cloudautomationnetwork, OCCITables.Types._Resource);
 
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationstorage__Cloudautomationstorage = new ExecutorFragment(Types._Cloudautomationstorage, CloudautomationTables.Types._Cloudautomationstorage);
 		private static final /*@NonNull*/ ExecutorFragment _Cloudautomationstorage__Entity = new ExecutorFragment(Types._Cloudautomationstorage, OCCITables.Types._Entity);
@@ -294,8 +294,8 @@ public class CloudautomationTables
 			Fragments._Cloudautomationnetwork__OclAny /* 0 */,
 			Fragments._Cloudautomationnetwork__OclElement /* 1 */,
 			Fragments._Cloudautomationnetwork__Entity /* 2 */,
-			Fragments._Cloudautomationnetwork__Link /* 3 */,
-			Fragments._Cloudautomationnetwork__Networkinterface /* 4 */,
+			Fragments._Cloudautomationnetwork__Resource /* 3 */,
+			Fragments._Cloudautomationnetwork__Network /* 4 */,
 			Fragments._Cloudautomationnetwork__Cloudautomationnetwork /* 5 */
 		};
 		private static final int /*@NonNull*/ [] __Cloudautomationnetwork = { 1,1,1,1,1,1 };
@@ -429,8 +429,12 @@ public class CloudautomationTables
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationnetwork__Link = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationnetwork__Networkinterface = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationnetwork__Network = {
+			InfrastructureTables.Operations._Network__down /* down() */,
+			InfrastructureTables.Operations._Network__down /* down() */,
+			InfrastructureTables.Operations._Network__up /* up() */,
+			InfrastructureTables.Operations._Network__up /* up() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationnetwork__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -457,6 +461,7 @@ public class CloudautomationTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationnetwork__Resource = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationstorage__Cloudautomationstorage = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudautomationstorage__Entity = {
@@ -603,10 +608,10 @@ public class CloudautomationTables
 
 			Fragments._Cloudautomationnetwork__Cloudautomationnetwork.initOperations(_Cloudautomationnetwork__Cloudautomationnetwork);
 			Fragments._Cloudautomationnetwork__Entity.initOperations(_Cloudautomationnetwork__Entity);
-			Fragments._Cloudautomationnetwork__Link.initOperations(_Cloudautomationnetwork__Link);
-			Fragments._Cloudautomationnetwork__Networkinterface.initOperations(_Cloudautomationnetwork__Networkinterface);
+			Fragments._Cloudautomationnetwork__Network.initOperations(_Cloudautomationnetwork__Network);
 			Fragments._Cloudautomationnetwork__OclAny.initOperations(_Cloudautomationnetwork__OclAny);
 			Fragments._Cloudautomationnetwork__OclElement.initOperations(_Cloudautomationnetwork__OclElement);
+			Fragments._Cloudautomationnetwork__Resource.initOperations(_Cloudautomationnetwork__Resource);
 
 			Fragments._Cloudautomationstorage__Cloudautomationstorage.initOperations(_Cloudautomationstorage__Cloudautomationstorage);
 			Fragments._Cloudautomationstorage__Entity.initOperations(_Cloudautomationstorage__Entity);

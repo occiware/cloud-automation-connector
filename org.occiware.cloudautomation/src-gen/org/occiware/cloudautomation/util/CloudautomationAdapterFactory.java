@@ -13,12 +13,11 @@
 package org.occiware.cloudautomation.util;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.cmf.occi.infrastructure.Network;
 import org.eclipse.cmf.occi.infrastructure.Storage;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -115,16 +114,12 @@ public class CloudautomationAdapterFactory extends AdapterFactoryImpl {
 				return createEntityAdapter();
 			}
 			@Override
-			public Adapter caseLink(Link object) {
-				return createLinkAdapter();
-			}
-			@Override
-			public Adapter caseNetworkinterface(Networkinterface object) {
-				return createNetworkinterfaceAdapter();
-			}
-			@Override
 			public Adapter caseResource(Resource object) {
 				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseNetwork(Network object) {
+				return createNetworkAdapter();
 			}
 			@Override
 			public Adapter caseCompute(Compute object) {
@@ -257,34 +252,6 @@ public class CloudautomationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.Link
-	 * @generated
-	 */
-	public Adapter createLinkAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Networkinterface <em>Networkinterface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.infrastructure.Networkinterface
-	 * @generated
-	 */
-	public Adapter createNetworkinterfaceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Resource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -295,6 +262,20 @@ public class CloudautomationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Network <em>Network</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Network
+	 * @generated
+	 */
+	public Adapter createNetworkAdapter() {
 		return null;
 	}
 

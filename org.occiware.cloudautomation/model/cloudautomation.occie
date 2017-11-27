@@ -4,7 +4,7 @@
   <import href="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <kinds name="CloudAutomationNetwork" scheme="http://org.occiware.cloudautomation#">
-    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
   </kinds>
   <kinds name="CloudAutomationInstance" scheme="http://org.occiware.cloudautomation#">
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>

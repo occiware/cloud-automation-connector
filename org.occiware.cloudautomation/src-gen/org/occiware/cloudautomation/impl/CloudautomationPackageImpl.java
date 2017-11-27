@@ -399,7 +399,7 @@ public class CloudautomationPackageImpl extends EPackageImpl implements Cloudaut
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		cloudautomationnetworkEClass.getESuperTypes().add(theInfrastructurePackage.getNetworkinterface());
+		cloudautomationnetworkEClass.getESuperTypes().add(theInfrastructurePackage.getNetwork());
 		cloudautomationinstanceEClass.getESuperTypes().add(theInfrastructurePackage.getCompute());
 		cloudautomationstorageEClass.getESuperTypes().add(theInfrastructurePackage.getStorage());
 		providerEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
